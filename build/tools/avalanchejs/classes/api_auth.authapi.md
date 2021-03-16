@@ -1,4 +1,3 @@
-[avalanche](../README.md) › [API-Auth](../modules/api_auth.md) › [AuthAPI](api_auth.authapi.md)
 
 # Class: AuthAPI
 
@@ -251,3 +250,6 @@ Name | Type | Description |
 `baseurl` | string | Path of the APIs baseurl - ex: "/ext/bc/X"  |
 
 **Returns:** *void*
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE1ODU3NDgzOTFdfQ==
+-->
