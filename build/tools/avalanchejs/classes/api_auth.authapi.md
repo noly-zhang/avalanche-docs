@@ -190,6 +190,9 @@ request ID that will be sent.
 **Returns:** *number*
 
 ___
+strikethrough text
+
+List item
 
 ###  newToken
 
@@ -251,5 +254,5 @@ Name | Type | Description |
 
 **Returns:** *void*
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODU3NDgzOTFdfQ==
+eyJoaXN0b3J5IjpbMTEyMzQxMzE1NCwtMTU4NTc0ODM5MV19
 -->
