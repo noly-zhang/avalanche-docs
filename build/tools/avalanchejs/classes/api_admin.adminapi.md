@@ -1,25 +1,25 @@
-[avalanche](../README.md) › [API-Admin](../modules/api_admin.md) › [AdminAPI](api_admin.adminapi.md)
+[雪崩]（../ README.md）› [ API-Admin ]（../ modules / api_admin.md）› [ AdminAPI ]（api_admin.adminapi.md)
 
-# Class: AdminAPI
+＃类别：AdminAPI
 
-Class for interacting with a node's AdminAPI.
+与节点的AdminAPI进行交互的类。
 
-**`remarks`** This extends the [JRPCAPI](common_jrpcapi.jrpcapi.md) class. This class should not be directly called.
-Instead, use the [Avalanche.addAPI](avalanche.avalanche-1.md#addapi) function to register this interface with Avalanche.
+** `备注` **这扩展了[ JRPCAPI ]（common_jrpcapi.jrpcapi.md）类。此类不应直接调用。而是使用[ Avalanche.addAPI ]（avalanche.avalanche-1.md＃addapi）函数向Avalanche注册此接口。
 
-## Hierarchy
 
-  ↳ [JRPCAPI](common_jrpcapi.jrpcapi.md)
+##层次结构
 
-  ↳ **AdminAPI**
+  ↳ [ JRPCAPI ]（common_jrpcapi.jrpcapi.md）
 
-## Index
+  ↳ ** AdminAPI **
 
-### Constructors
+##索引
 
-* [constructor](api_admin.adminapi.md#constructor)
+###构造函数
 
-### Properties
+* [构造函数]（api_admin.adminapi.md＃constructor）
+
+###属性
 
 * [baseurl](api_admin.adminapi.md#protected-baseurl)
 * [core](api_admin.adminapi.md#protected-core)
@@ -298,3 +298,6 @@ Stop the CPU profile that was previously started.
 **Returns:** *Promise‹boolean›*
 
 Promise for a boolean that is true on success.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE4ODUzMTkwMjBdfQ==
+-->
