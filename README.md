@@ -1,40 +1,40 @@
 ---
-description: >-
-  Build on Avalanche. Build without limits. Developers who build on Avalanche
-  can easily create powerful, reliable, and secure applications.
----
+描述：>-  在雪崩基础上构建。建立无极限。基于Avalanche的开发人员  可以轻松创建功能强大，可靠且安全的应用程序。---
 
-# Developer Documentation
 
-{% tabs %}
-{% tab title="Coming From Ethereum?" %}
-{% page-ref page="build/tutorials/smart-contracts/deploy-a-smart-contract-on-avalanche-using-remix-and-metamask.md" %}
 
-{% page-ref page="build/tutorials/smart-contracts/using-truffle-with-the-avalanche-c-chain.md" %}
-{% endtab %}
 
-{% tab title="Avalanche Wallet" %}
-{% page-ref page="build/tutorials/nodes-and-staking/staking-avax-by-validating-or-delegating-with-the-avalanche-wallet.md" %}
+＃开发人员文档
 
-{% page-ref page="build/tutorials/platform/transfer-avax-between-x-chain-and-p-chain.md" %}
+{％tabs％} {％tab title =“来自以太坊吗？” ％} {％page-ref page =“ build / tutorials / smart-contracts / deploy-a-smart-contract-on-avalanche-using-remix-and-metamask.md”％}
 
-{% page-ref page="build/tutorials/platform/transfer-avax-between-x-chain-and-c-chain.md" %}
-{% endtab %}
 
-{% tab title="Staking" %}
-{% page-ref page="build/get-started.md" %}
 
-{% page-ref page="build/tutorials/nodes-and-staking/" %}
-{% endtab %}
+{％page-ref page =“构建/教程/智能合约/使用松露与雪崩c-chain.md”％} {％endtab％}
 
-{% tab title="Advanced" %}
-{% page-ref page="build/tutorials/platform/create-a-subnet.md" %}
 
-{% page-ref page="build/tutorials/platform/create-a-new-blockchain.md" %}
+{％tab title =“雪崩钱包”％} {％page-ref page =“通过验证或委派与avalanche-wallet.md来构建/教程/节点并放样/放样“％}
 
-{% page-ref page="build/tutorials/smart-digital-assets/create-a-fix-cap-asset.md" %}
 
-{% page-ref page="build/tutorials/smart-digital-assets/creating-a-variable-cap-asset.md" %}
+{％page-ref page =“ build / tutorials / platform / transfer-avax-between-x-chain-and-p-chain.md”％}
+
+{％page-ref page =“ build / tutorials / platform / transfer-avax-between-x-chain-and-c-chain.md”％} {％endtab％}
+
+
+{％选项卡标题=“ Staking”％} {％page-ref page =“ build / get-started.md”％}
+
+
+{％page-ref page =“ build / tutorial / nodes-and-stake /”％} {％endtab％}
+
+
+{％选项卡标题=“高级”％} {％page-ref page =“ build / tutorials / platform / create-a-subnet.md”％}
+
+
+{％page-ref page =“ build / tutorials / platform / create-a-new-blockchain.md”％}
+
+{％page-ref page =“构建/教程/智能数字资产/create-a-fix-cap-asset.md”％}
+
+{％page-ref page =“ build / tutorials / smart-digital-assets / creating-a-variable-cap-asset.md”％}
 
 {% page-ref page="build/tutorials/smart-digital-assets/creating-a-nft-part-1.md" %}
 {% endtab %}
@@ -104,5 +104,8 @@ Create your own public or private blockchains.
 
 ### Designed for Finance
 
-Native support for easily creating and trading digital smart assets with complex, custom rulesets.
+本机支持，用于使用复杂的自定义规则集轻松创建和交易数字智能资产。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTkwOTA3OTAxN119
+-->
