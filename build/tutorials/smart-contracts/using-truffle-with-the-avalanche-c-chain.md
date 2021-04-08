@@ -1,20 +1,20 @@
-# Using Truffle with the Avalanche C-Chain
+＃将松露与雪崩C链一起使用
 
-## Introduction
+##简介
 
-[Truffle Suite](https://www.trufflesuite.com) is a toolkit for launching decentralized applications \(dapps\) on the EVM. With Truffle you can write and compile smart contracts, build artifacts, run migrations and interact with deployed contracts. This tutorial illustrates how Truffle can be used with Avalanche's C-Chain, which is an instance of the EVM.
+[ Truffle Suite ]（https://www.trufflesuite.com）是用于在EVM上启动分散式应用程序\（dapps \）的工具包。使用Truffle，您可以编写和编译智能合约，构建工件，运行迁移并与已部署的合约进行交互。本教程说明了Truffle如何与Avalanche的C链（EVM的一个实例）一起使用。
 
-## Requirements
+##要求
 
-You've completed [Run an Avalanche Node](../../get-started.md) and are familiar with [Avalanche's architecture](../../../learn/platform-overview/). You've also performed a cross-chain swap via the [Transfer AVAX Between X-Chain and C-Chain](../platform/transfer-avax-between-x-chain-and-c-chain.md) tutorial to get funds to your C-Chain address.
+您已经完成[运行雪崩节点]（../../ get-started.md），并且熟悉[雪崩的体系结构]（../../../ learn / platform-overview /）。您还通过[在X链和C链之间传输AVAX ]（../ platform / transfer-avax-between-x-chain-and-c-chain.md）教程执行了跨链交换获得资金到您的C-Chain地址。
 
-## Dependencies
+##依赖关系
 
-* [Avash](https://github.com/ava-labs/avash) is a tool for running a local Avalanche network. It's similar to Truffle's [Ganache](https://www.trufflesuite.com/ganache).
-* [NodeJS](https://nodejs.org/en) v8.9.4 or later.
-* Truffle, which you can install with `npm install -g truffle`
+* [ Avash ]（https://github.com/ava-labs/avash）是用于运行本地Avalanche网络的工具。它类似于Truffle的[ Ganache ]（https://www.trufflesuite.com/ganache）。* [的NodeJS ]（https://nodejs.org/en）v8.9.4或更高版本。*松露，您可以用安装` NPM安装-g松露`
 
-## Start up a local Avalanche network
+
+
+##启动本地雪崩网络
 
 [Avash](https://github.com/ava-labs/avash) allows you to spin up private test network deployments with up to 15 AvalancheGo nodes out-of-the-box. Avash supports automation of regular tasks via lua scripts. This enables rapid testing against a wide variety of configurations. The first time you use avash you'll need to [install and build it](https://github.com/ava-labs/avash#quick-setup).
 
@@ -374,19 +374,22 @@ This should return:
 undefined
 ```
 
-The result of the call to `retrieve` is a `BN` \(big number\). Call its `.toNumber` method to see the value:
+调用的结果`检索`是` BN ` \（大数目\）。调用它的` .toNumber `方法来查看值：
 
-```javascript
-truffle(development)> i.toNumber()
-```
+javascript松露（开发）> i 。toNumber （）```
 
-You should see the number you stored.
 
-```javascript
-1234
-```
 
-## Summary
+您应该看到存储的号码。
 
-Now you have the tools you need to launch a local Avalanche network, create a truffle project, as well as create, compile, deploy and interact with Solidity contracts.
+```的JavaScript 1234 ```
 
+
+
+##摘要
+
+现在，您拥有启动本地雪崩网络，创建松露项目以及创建，编译，部署和与Solidity合同进行交互所需的工具。
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTM1MzI2NzM0N119
+-->
