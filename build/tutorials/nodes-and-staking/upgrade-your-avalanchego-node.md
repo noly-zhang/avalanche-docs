@@ -1,30 +1,30 @@
-# Upgrade Your AvalancheGo Node
+＃升级您的AvalancheGo节点
 
-{% embed url="https://youtu.be/o4Fww-sHoaQ" %}
+{％embed url =“ https://youtu.be/o4Fww-sHoaQ”％}
 
-## **Backup your node**
+## **备份您的节点** 
 
-Before upgrading your node, it is recommended you backup your staker files which are used to identify your node on the network. In the default installation, you can copy them by running following commands:
+升级节点之前，建议您备份放样文件，这些文件用于标识网络上的节点。在默认安装中，可以通过运行以下命令来复制它们：
 
-```text
-cd
-cp ~/.avalanchego/staking/staker.crt .
-cp ~/.avalanchego/staking/staker.key .
-```
+```文本
+cd 
+cp〜/ .avalanchego / staking / staker.crt。
+cp〜/ .avalanchego / staking / stroker.key。```
 
-Then download `staker.crt` and `staker.key` files and keep them somewhere safe and private. If anything happens to your node or the machine node runs on, these files can be used to fully recreate your node.
 
-If you use your node for development purposes and have keystore users on your node, you should back up those too.
+然后下载` staker.crt `和` staker.key `文件并保存在安全的地方和私人。如果您的节点发生任何事情或机器节点在运行，则这些文件可用于完全重新创建您的节点。
 
-## Node installed using the installer script
+如果您将节点用于开发目的并且在节点上有密钥库用户，则也应该备份这些用户。
 
-If you installed your node using the [installer script](set-up-node-with-installer.md), to upgrade your node, just run the installer script again.
+##使用安装程序脚本安装的节点
+
+如果使用[安装程序脚本]（set-up-node-with-installer.md）安装了节点，则要升级节点，只需再次运行安装程序脚本即可。
 
 ```text
 ./avalanchego-installer.sh
 ```
 
-It will detect that you already have AvalancheGo installed:
+它将检测到您已经安装了AvalancheGo：
 
 ```text
 AvalancheGo installer
@@ -150,33 +150,36 @@ git pull
 
 Check that your local code is up to date. Do:
 
-```text
-git rev-parse HEAD
-```
+```文本
+混帐REV-HEAD解析```
 
-and check that the first 7 characters printed match the Latest commit field on our [Github.](https://github.com/ava-labs/avalanchego)
 
-Now build the binary:
+并检查打印出的前7个字符是否与我们[ Github。]（https://github.com/ava-labs/avalanchego）
+
+现在构建二进制文件：
 
 ```text
 ./scripts/build.sh
 ```
 
-This should print:
+这应该打印：
 
-```text
-Build Successful
-```
+```文本
+构建成功```
 
-You can check what version you’re running by doing:
 
-```text
-./build/avalanchego --version
-```
+您可以通过执行以下操作来检查正在运行的版本：
 
-You can run your node with:
+```文本
+./build/avalanchego --version ```
+
+
+您可以使用以下命令运行节点：
 
 ```text
 ./build/avalanchego
 ```
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTE5MDE0ODM1M119
+-->
