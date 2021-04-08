@@ -1,28 +1,28 @@
 ---
-description: A deep dive into the Avalanche consensus protocol
----
+描述：深入研究Avalanche共识协议-
 
-# Avalanche Consensus
 
-Consensus is the task of getting a group of computers to come to an agreement on a decision. Computers can reach a consensus by following a set of steps called a consensus protocol. Avalanche is a new consensus protocol that is scalable, robust, and decentralized. It has low latency and high throughput. It is energy efficient and does not require special computer hardware. It performs well in adversarial conditions and is resilient to "51% attacks." This document explains the Avalanche consensus protocol. The whitepaper is [here.](https://www.avalabs.org/whitepapers)
+＃雪崩共识
 
-## Video
+共识是使一组计算机就一项决定达成协议的任务。计算机可以通过遵循称为共识协议的一组步骤来达成共识。Avalanche是一种新的共识协议，具有可伸缩性，健壮性和去中心化性。它具有低延迟和高吞吐量。它具有高能效，不需要特殊的计算机硬件。它在对抗条件下表现良好，可以抵抗“ 51％攻击”。本文档介绍了Avalanche共识协议。白皮书在[这里。]（https://www.avalabs.org/whitepapers）
 
-{% embed url="https://www.youtube.com/watch?v=ZUF9sIu-D\_k" caption="" %}
+##视频
 
-## Intuition
+{％embed url =“ https://www.youtube.com/watch?v=ZUF9sIu-D \ _k”标题=“”％}
 
-First, let's develop some intuition about the protocol. Imagine a room full of people trying to agree on what to get for lunch. Suppose it's a binary choice between pizza and barbecue. Some people might initially prefer pizza while others initially prefer barbecue. Ultimately, though, everyone's goal is to achieve **consensus**.
+##直觉
 
-Everyone asks a random subset of the people in the room what their lunch preference is. If more than half say pizza, the person thinks, "Ok, looks like things are leaning toward pizza. I prefer pizza now." That is, they adopt the _preference_ of the majority. Similarly, if a majority say barbecue, the person adopts barbecue as their preference.
+首先，让我们对协议进行一些直观的了解。想象一个房间里挤满了人，他们试图就午餐吃什么达成共识。假设这是披萨和烧烤之间的二元选择。有些人最初可能喜欢披萨，而另一些人最初喜欢烧烤。不过说到底，大家的目标是实现**共识**。
 
-Everyone repeats this process. Each round, more and more people have the same preference. This is because the more people that prefer an option, the more likely someone is to receive a majority reply and adopt that option as their preference. After enough rounds, they reach consensus and decide on one option, which everyone prefers.
+每个人都会随机询问房间中的一小部分人的午餐偏好。如果有一半以上的人说披萨，那么该人会说：“好吧，看起来东西正朝披萨倾斜。我现在更喜欢披萨。” 也就是说，他们采用多数人的_偏好_。同样，如果大多数人说烧烤，那么该人会以烧烤为他们的偏爱。
 
-## Snowball
+每个人都重复此过程。每回合，越来越多的人有相同的偏好。这是因为更多的人喜欢该选项，某人获得多数回复并采用该选项作为他们的偏好的可能性就越大。经过足够多的回合，他们达成共识，并决定了每个人都喜欢的一种选择。
 
-The intuition above outlines the Snowball Algorithm, which is a building block of Avalanche consensus. Let's review the Snowball algorithm.
+##雪球
 
-### Parameters
+上面的直觉概述了“雪球算法”，它是雪崩共识的基础。让我们回顾一下Snowball算法。
+
+###参数
 
 * _n_: number of participants
 * _k_ \(sample size\): between 1 and _n_
@@ -172,11 +172,14 @@ Avalanche has no leader. Any node can propose a transaction and any node that ha
 
 Avalanche is a general consensus engine. It doesn't matter what type of application is put on top of it. The protocol allows the decoupling of the application layer from the consensus layer. If you're building a Dapp on Avalanche then you just need to define a few things, like how conflicts are defined and what is in a transaction. You don't need to worry about how nodes come to an agreement. The consensus protocol is a black box that put something into it and it comes back as accepted or rejected.
 
-Avalanche can be used for all kinds of applications, not just P2P payment networks. Avalanche's Primary Network has an instance of the Ethereum Virtual Machine, which is backward compatible with existing Ethereum Dapps and dev tooling. The Ethereum consensus protocol has been replaced with Avalanche consensus to enable lower block latency and higher throughput.
+雪崩不仅可以用于P2P支付网络，还可以用于各种应用程序。雪崩的主要网络有一个以太坊虚拟机的实例，该实例向后兼容现有的以太坊Dapps和开发工具。以太坊共识协议已被Avalanche共识所取代，以实现更低的区块延迟和更高的吞吐量。
 
-Avalanche is very performant. It can process thousands of transactions per second with one to two second acceptance latency.
+雪崩表现非常出色。它每秒可以处理数千个事务，接受延迟为一到两秒。
 
-## Summary
+##摘要
 
-Avalanche consensus is a radical breakthrough in distributed systems. It represents as large a leap forward as the classical and Nakamoto consensus protocols that came before it. Now that you have a better understanding of how it works, check out other [documentation](https://docs.avax.network) for building game-changing Dapps and financial instruments on Avalanche.
+雪崩共识是分布式系统的根本突破。它代表了之前的经典协议和中本共识协议的巨大飞跃。现在，您对它的工作原理有了更好的了解，请查看其他[文档]（https://docs.avax.network），以在Avalanche上构建改变游戏规则的Dapp和金融工具。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE2MTY3NjY2MTFdfQ==
+-->
