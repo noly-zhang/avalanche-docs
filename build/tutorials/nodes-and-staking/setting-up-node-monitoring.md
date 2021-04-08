@@ -1,25 +1,25 @@
-# Run an Avalanche Node Monitoring
+＃运行雪崩节点监控
 
-_Thank you to community member Jovica Popović, who wrote this tutorial. You can reach him on our_ [_Discord_](https://chat.avax.network) _if needed._
+_感谢编写本教程的社区成员JovicaPopović。如果需要，可以通过我们的_ [ _ Discord _ ]（https://chat.avax.network）_与他联系。_  
 
-## Introduction
+##简介
 
-This tutorial assumes you have Ubuntu 18.04 or 20.04 running on your node \(a Mac OS X version of this tutorial will come later\).
+本教程假定您的节点上正在运行Ubuntu 18.04或20.04（本教程的Mac OS X版本将在以后发布）。
 
-This tutorial will show how to set up infrastructure to monitor an instance of [AvalancheGo](https://github.com/ava-labs/avalanchego). We will use:
+本教程将展示如何设置基础结构来监视[ AvalancheGo ]（https://github.com/ava-labs/avalanchego）的实例。我们将使用：
 
-* [Prometheus](https://prometheus.io/) to gather and store data
-* [node\_exporter](https://github.com/prometheus/node_exporter) to get information about the machine,
-* AvalancheGo’s [metrics API](https://docs.avax.network/v1.0/en/api/metrics/) to get information about the node
-* [Grafana](https://grafana.com/) to visualize data on a dashboard.
+* [ Prometheus ]（https://prometheus.io/）来收集和存储数据* [ node \ _exporter ]（https://github.com/prometheus/node_exporter）以获取有关机器的信息，* AvalancheGo的[指标API ]（https://docs.avax.network/v1.0/en/api/metrics/）获取有关节点的信息* [ Grafana ]（https://grafana.com/）以在仪表板上可视化数据。
 
-Prerequisites:
 
-* A running AvalancheGo node
-* Shell access to the machine running the node
-* Administrator privileges on the machine
 
-### **Caveat: Security**
+
+先决条件：
+
+*正在运行的AvalancheGo节点*壳牌访问本机运行的节点*机器的管理员权限
+
+
+
+### **警告：安全性** 
 
 {% hint style="danger" %}
 The system as described here **should not** be opened to the public internet. Neither Prometheus nor Grafana as shown here is hardened against unauthorized access. Make sure that both of them are accessible only over a secured proxy, local network, or VPN. Setting that up is beyond the scope of this tutorial, but exercise caution. Bad security practices could lead to attackers gaining control over your node! It is your responsibility to follow proper security practices.
@@ -356,13 +356,16 @@ Check Prometheus web interface on `http://your-node-host-ip:9090/targets`. You s
 * avalanchego
 * avalanchego-machine
 
-Open Grafana; you can now create a dashboard using any of those sources. You can also use [the preconfigured dashboards](https://github.com/ava-labs/node-monitoring/tree/master/dashboards).
+打开Grafana；您现在可以使用这些来源中的任何一个来创建仪表板。您还可以使用[预先配置的仪表板]（https://github.com/ava-labs/node-monitoring/tree/master/dashboards）。
 
-To import the preconfigured dashboard:
+导入预配置的仪表板：
 
-* Open Grafana’s web interface
-* Click `+` on the left toolbar
-* Select `Import JSON` and then upload the JSON file
+*打开Grafana的Web界面*点击` + `左侧工具栏上的*选择`导入JSON `然后上传JSON文件
 
-That’s it! You may now marvel at all the things your node does. Woohoo!
 
+
+而已！您现在可能会对节点所做的所有事情感到惊讶。oo！
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMzc0MzUwMzA0XX0=
+-->
