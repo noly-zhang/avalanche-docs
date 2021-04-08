@@ -1,7 +1,10 @@
-# Smart Contracts
+＃智能合约
 
-| Title | Description |
-| :--- | :--- |
-| [**Deploy a Smart Contract on Avalanche Using Remix and MetaMask**](deploy-a-smart-contract-on-avalanche-using-remix-and-metamask.md) | Deploy and test a smart contract on Avalanche using Remix and MetaMask. |
-| [**Using Truffle with the Avalanche C-Chain**](using-truffle-with-the-avalanche-c-chain.md) | Using Truffle with the Avalanche's C-Chain, an instance of the Ethereum Virtual Machine \(EVM\) |
+| 标题| 说明| | ：- ：- | [ **使用Remix和MetaMask在Avalanche上部署智能合约** ]（部署雪崩智能合约，使用remix-and-metamask.md）| 使用Remix和MetaMask在Avalanche上部署和测试智能合约。| | [ **将松露与雪崩C链一起使用** ]（与avalanche-c-chain.md一起使用松露）| 将Truffle与Avalanche的C链一起使用，以太坊虚拟机\（EVM \）的实例|
 
+  
+  
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMzg4Mzg4OTI4XX0=
+-->
