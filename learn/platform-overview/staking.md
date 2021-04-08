@@ -1,16 +1,16 @@
 ---
-description: Learn how to stake on Avalanche by validating or delegating
----
+描述：了解如何通过验证或委派---来赌雪崩
 
-# Staking
 
-Staking is the process of locking up tokens to support a network while receiving a reward in return \(rewards can be increased network utility, monetary compensation, etc.\). The concept of staking was [first formally introduced](https://web.archive.org/web/20160306084128/https://peercoin.net/assets/paper/peercoin-paper.pdf) by Sunny King and Scott Nadal of Peercoin.
+＃罢工
 
-### How does proof-of-stake work?
+抵押是锁定令牌以支持网络，同时获得回报的过程（奖励可以增加网络效用，金钱补偿等）。抵押的概念[首次正式引入]（https://web.archive.org/web/20160306084128/https://peercoin.net/assets/paper/peercoin-paper.pdf）由Peercoin。
 
-To resist [sybil attacks](https://support.avalabs.org/en/articles/4064853-what-is-a-sybil-attack), a decentralized network must require that network influence is paid with a scarce resource. This makes it infeasibly expensive for an attacker to gain enough influence over the network to compromise its security. In proof-of-work systems, the scarce resource is computing power. On Avalanche, the scarce resource is the native token, [AVAX](../../#avalanche-avax-token). For a node to [validate](http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator) a blockchain on Avalanche, it must stake AVAX.
+###股权证明如何运作？
 
-## Staking Parameters on Avalanche
+为了抵御[ sybil攻击]（https://support.avalabs.org/en/articles/4064853-what-is-a-sybil-attack），分散式网络必须要求以稀缺资源来支付网络影响力。这使得攻击者在网络上获得足够的影响以损害其安全性的代价实在不可行。在工作量证明系统中，稀缺资源是计算能力。上雪崩时，稀缺资源是天然令牌，[ AVAX ]（../../#雪崩avax令牌）。为了使节点能够[验证]（http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator）雪崩上的区块链，必须将AVAX抵押。
+
+##在雪崩上放样参数
 
 When a validator is done validating the [Primary Network](http://support.avalabs.org/en/articles/4135650-what-is-the-primary-network), it receives back the AVAX tokens it staked. It may receive a reward for helping to secure the network. A validator only receives a [validation reward](http://support.avalabs.org/en/articles/4587396-what-are-validator-staking-rewards) if it is sufficiently responsive and correct during the time it validates. Read the [Avalanche token whitepaper](https://files.avalabs.org/papers/token.pdf) to learn more about AVAX and the mechanics of staking.
 
@@ -99,7 +99,10 @@ Note that once you issue the transaction to add your stake to a delegator, there
 
 ### Delegator rewards <a id="delegator-rewards"></a>
 
-If the validator that you delegate tokens to is sufficiently correct and responsive, you will receive a reward when you are done delegating. Delegators are rewarded according to the same function as validators. However, the validator that you delegate to keeps a portion of your reward–specified by the validator’s delegation fee rate.
+如果您将令牌委派给的验证者足够正确且响应迅速，则委派完成后您将获得奖励。委托人根据与验证人相同的功能获得奖励。但是，您委派给的验证者保留您的部分奖励-由验证者的委派费率指定。
 
-When you issue the transaction to delegate tokens, the staked tokens and transaction fee are deducted from the addresses you control. When you are done delegating, the staked tokens are returned to your address. If you earned a reward, it is sent to the address you specified when you delegated tokens.
+当您发行交易以委托代币时，抵押代币和交易费用将从您控制的地址中扣除。完成委派后，放样的令牌将返回到您的地址。如果您获得了奖励，则会将其发送到您委派令牌时指定的地址。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTQ3OTQzMTU0OV19
+-->
