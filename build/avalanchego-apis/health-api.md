@@ -1,26 +1,26 @@
-# Health API
+＃健康API
 
-This API can be used for measuring node health.
+该API可用于测量节点运行状况。
 
-To get an HTTP status code response that indicates the node’s health, make a `GET` request to `/ext/health`. If the node is healthy, it will return a `200` status code. If you want more in-depth information about a node’s health, use the methods below.
+为了得到一个HTTP状态代码响应，指示节点的健康，做一个' GET '请求' / EXT /健康'。如果节点运行状况良好，它将返回状态代码“ 200 ”。如果需要有关节点运行状况的更深入的信息，请使用以下方法。
 
-## Format
+##格式
 
-This API uses the `json 2.0` RPC format. For more information on making JSON RPC calls, see [here](issuing-api-calls.md).
+该API使用` JSON 2.0 ` RPC格式。有关进行JSON RPC调用的更多信息，请参见[ here ]（issuing-api-calls.md）。
 
-## Endpoint
+##端点
 
-```text
-/ext/health
-```
+```文本
+/ ext / health```
 
-## Methods
+
+##方法
 
 ### health.getLiveness
 
-The node runs a set of health checks every 30 seconds, including a health check for each chain. This method returns the last set of health check results.
+该节点每30秒运行一组运行状况检查，包括每个链的运行状况检查。此方法返回最后一组运行状况检查结果。
 
-#### **Signature**
+#### **签名** 
 
 ```cpp
 health.getLiveness() -> {
@@ -107,13 +107,16 @@ In this example response, the C-Chain’s health check is failing.
                 },
                 "timestamp": "2020-10-14T14:04:05.610007874Z",
                 "duration": 6124,
-                "contiguousFailures": 0,
-                "timeOfFirstFailure": null
-            }
-        },
-        "healthy": false
-    },
-    "id": 1
-}
-```
+                "contiguousFailures": 0 ，“ timeOfFirstFailure” ： null } } ，“ healthy” ：false } ，“ id” ：1 } ```
+                
+            
+        
+         
+    
+     
 
+
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbOTU3MDM5ODMwXX0=
+-->
