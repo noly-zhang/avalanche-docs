@@ -1,20 +1,20 @@
-# Create a Fixed-Cap Asset
+＃创建固定资产
 
-## Introduction
+##简介
 
-This tutorial illustrates how Avalanche can be used to create and trade a fixed-cap, fungible asset. A specific quantity of the asset is created at the asset’s initialization, and then, no more is ever created.
+本教程说明了如何使用雪崩来创建和交易固定上限的可替代资产。在资产初始化时会创建特定数量的资产，然后再也不会创建更多资产。
 
-Suppose there is an Income Sharing Agreement \(ISA\) with 10M shares, and no more shares are ever created. Let’s create an asset where one unit of the asset represents one share of the ISA.
+假设有一个包含1000万股的收入共享协议（ISA），并且不再创建任何股份。让我们创建一种资产，其中资产的一个单位代表ISA的一股份额。
 
-## Requirements
+##要求
 
-You've completed [Run an Avalanche Node](../../get-started.md) and are familiar with [Avalanche's architecture](../../../learn/platform-overview/).
+您已经完成[运行雪崩节点]（../../ get-started.md），并且熟悉[雪崩的体系结构]（../../../ learn / platform-overview /）。
 
-## Create the Asset
+##创建资产
 
-Our asset will exist on the [X-Chain](../../../learn/platform-overview/#exchange-chain-x-chain), so to create our asset we’ll call `avm.createFixedCapAsset`, a method of the [X-Chain’s API](../../avalanchego-apis/exchange-chain-x-chain-api.md).
+我们的资产将存在于[ X链]（../../../ learn / platform-overview /＃exchange-chain-x-chain）上，因此要创建我们的资产，我们将其称为` avm.createFixedCapAsset `，一种[ X链API ]（../../avalanchego-apis/exchange-chain-x-chain-api.md）的方法。
 
-The signature for this method is:
+该方法的签名是：
 
 ```cpp
 avm.createFixedCapAsset({
@@ -220,3 +220,6 @@ In this tutorial, we:
 * Called `getBalance` to check address balances
 * Called `send` to transfer a quantity of our asset
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTgyMjUwNTg3MF19
+-->
