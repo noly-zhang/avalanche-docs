@@ -1,26 +1,26 @@
-# Run an Avalanche Node with Amazon Web Services \(AWS\)
+＃使用Amazon Web Services \（AWS \）运行雪崩节点
 
-## Introduction
+##简介
 
-This tutorial will guide you through setting up an Avalanche node on [Amazon Web Services \(AWS\)](https://aws.amazon.com/). Cloud services like AWS are a good way to ensure that your node is highly secure, available, and accessible.
+本教程将指导您在[ Amazon Web Services \（AWS \） ]（https://aws.amazon.com/）上设置Avalanche节点。像AWS这样的云服务是确保您的节点高度安全，可用和可访问的好方法。
 
-To get started, you'll need:
+要开始使用，您需要：
 
-* An AWS account
-* A terminal with which to SSH into your AWS machine
-* A place to securely store and back up files
+*一个AWS账户*一个用于通过SSH进入您的AWS机器的终端*一个安全地存储和备份文件的地方
 
-This tutorial assumes your local machine has a Unix style terminal. If you're on Windows, you'll have to adapt some of the commands used here.
 
-## Log Into AWS <a id="ff31"></a>
 
-Signing up for AWS is outside the scope of this article, but Amazon has instructions [here](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account).
+本教程假定您的本地计算机具有Unix风格的终端。如果您使用的是Windows，则必须调整此处使用的某些命令。
 
-It is _highly_ recommended that you set up Multi-Factor Authentication on your AWS root user account to protect it. Amazon has documentation for this [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root).
+##登录到AWS <一个 ID = “ FF31 ” > </一>
 
-Once your account is set up, you should create a new EC2 instance. An EC2 is a virtual machine instance in AWS's cloud. Go to the [AWS Management Console](https://console.aws.amazon.com/) and enter the EC2 dashboard.
+注册AWS不在本文的讨论范围之内，但是Amazon在[此处]（https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account）进行了说明。
 
-![AWS Management Console.png](../../../.gitbook/assets/AWS-Management-Console.png)
+这是_强烈_推荐你建立多因素验证您的AWS root用户帐户保护它。亚马逊为此[此处]（https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root）提供了文档。
+
+设置帐户后，您应该创建一个新的EC2实例。EC2是AWS云中的虚拟机实例。转到[ AWS管理控制台]（https://console.aws.amazon.com/）并输入EC2仪表板。
+
+！[AWS管理控制台.png]（../../../. gitbook/assets/AWS-Management-Console.png ）
 
 To log into the EC2 instance, you will need a key on your local machine that grants access to the instance. First, create that key so that it can be assigned to the EC2 instance later on. On the bar on the left side, under **Network & Security**, select **Key Pairs.**
 
@@ -273,5 +273,8 @@ Your machine is now running the newest AvalancheGo version. To see the status of
 
 ## Wrap Up
 
-That's it! You now have an AvalancheGo node running on an AWS EC2 instance. We recommend setting up [node monitoring ](setting-up-node-monitoring.md)for your AvalancheGo node. We also recommend setting up AWS billing alerts so you're not surprised when the bill arrives. If you have feedback on this tutorial, or anything else, send us a message on [Discord](https://chat.avalabs.org).
+而已！现在，您有一个在AWS EC2实例上运行的AvalancheGo节点。我们建议为您的AvalancheGo节点设置[节点监视]（setting-up-node-monitoring.md）。我们还建议您设置AWS账单警报，这样当账单到达时您就不会感到惊讶。如果您对本教程或其他内容有任何反馈，请在[ Discord ]（https://chat.avalabs.org）上向我们发送消息。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTU3MTY0MjI4NF19
+-->
