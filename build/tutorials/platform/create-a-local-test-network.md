@@ -1,24 +1,24 @@
-# Create a Local Test Network
+＃创建一个本地测试网络
 
-## Introduction
+##简介
 
-In the [Get Started tutorial](https://avalanche.gitbook.io/avalanche/build/getting-started), we connect a node to the test network. You might find it useful to create a local test network.
+在[入门教程]（https://avalanche.gitbook.io/avalanche/build/getting-started）中，我们将节点连接到测试网络。您可能会发现创建本地测试网络很有用。
 
-We’ll show you how to launch a 5 node local test network. For both, we’ll show how to launch the network using [Avash](https://avalanche.gitbook.io/avalanche/build/tools/avash) and manually.
+我们将向您展示如何启动5节点本地测试网络。两者都将展示如何使用[ Avash ]（https://avalanche.gitbook.io/avalanche/build/tools/avash）和手动启动网络。
 
-The 5 nodes will have HTTP ports \(where API calls should be sent\) `9650`, `9652`, `9654`, `9656` , and `9658`.
+5个节点将HTTP端口\（其中API调用应发送\）` 9650 `，` 9652 `，` 9654 `，` 9656 `和` 9658 `。
 
-## Create a Local Test Network
+##创建本地测试网络
 
-The below commands assume you have [AvalancheGo](https://avalanche.gitbook.io/avalanche/build/getting-started#download-avalanchego) installed at `$GOPATH/src/github.com/ava-labs/avalanchego`. Each of the five nodes created is a validator. The staking keys for these nodes are in `$GOPATH/src/github.com/ava-labs/avalanchego/staking/local/staker1.crt`, etc.
+下面的命令假设你有[ AvalancheGo（https://avalanche.gitbook.io/avalanche/build/getting-started#download-avalanchego）安装在` $ GOPATH / src目录/ github.com / AVA-实验室/ avalanchego `。创建的五个节点中的每个节点都是一个验证器。这些节点的跑马圈地键是` $ GOPATH / src目录/ github.com / AVA-实验室/ avalanchego /放样/本地/ staker1.crt `等
 
-### Manually
+###手动
 
-To start the network:
+要启动网络：
 
 ```cpp
-cd $GOPATH/src/github.com/ava-labs/avalanchego
-```
+ cd $ GOPATH / src / github的。COM / AVA -实验室/ avalanchego ```
+
 
 ```cpp
 ./scripts/build.sh
@@ -149,5 +149,8 @@ curl --location --request POST 'localhost:9650/ext/platform' \
 
 That’s it! Your local version of Avalanche is up and running. It has the default blockchains: the [X-Chain](https://avalanche.gitbook.io/avalanche/learn/platform-overview#exchange-chain-x-chain), [C-Chain](https://avalanche.gitbook.io/avalanche/learn/platform-overview#contract-chain-c-chain), and [P-Chain](https://avalanche.gitbook.io/avalanche/learn/platform-overview#platform-chain-p-chain). The only subnet that exists is the Primary Network.
 
-You can add more nodes to the network. Just remember to give unique values for `db-dir`, `http-port` , and `staking-port`.
+您可以将更多节点添加到网络。只要记得给唯一值` DB-DIR `，` HTTP端口`和`放样端口`。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE2Mzk0MTE3NjddfQ==
+-->
