@@ -1,34 +1,34 @@
-# Auth API
+＃验证API
 
-When you run a node, you can require that API calls have an authorization token attached. This API manages the creation and revocation of authorization tokens.
+运行节点时，可以要求API调用附加授权令牌。此API管理授权令牌的创建和吊销。
 
-An authorization token provides access to one or more API endpoints. This is is useful for delegating access to a node’s APIs. Tokens expire after 12 hours.
+授权令牌提供对一个或多个API端点的访问。这对于委派对节点API的访问很有用。令牌会在12小时后过期。
 
-An authorization token is provided in the header of an API call. Specifically, the header `Authorization` should have value `Bearer TOKEN.GOES.HERE` \(where `TOKEN.GOES.HERE` is replaced with the token\).
+API调用的标头中提供了一个授权令牌。具体地讲，首部`授权`应具有值`承载TOKEN.GOES.HERE ` \（其中` TOKEN.GOES.HERE `被替换令牌\）。
 
-This API is only reachable if the node is started with [command line argument ](../references/command-line-interface.md)`--api-auth-required`. If the node is started without this CLI, API calls do not require authorization tokens, so this API is not reachable. This API never requires an authorization token to be reached.
+如果该节点是开始使用此API仅可到达[命令行参数]（../引用/ command-line-interface.md）` --api-AUTH-需要`。如果在没有此CLI的情况下启动节点，则API调用不需要授权令牌，因此无法访问此API。此API永远不需要访问授权令牌。
 
-Authorization token creation must be permissioned. If you run your node with `--api-auth-required`, you must also specify an authorization token password with argument `--api-auth-password`. You must provide this password in order to create/revoke authorization tokens.
+必须创建授权令牌。如果你运行你的节点` --api认证-需要'，你还必须指定参数授权令牌的密码` --api-认证密码`。您必须提供此密码才能创建/撤消授权令牌。
 
-Note that if you run your node with `--api-auth-required` then some tools like MetaMask may not be able to make API calls to your node because they don’t have an auth token.
+请注意，如果你运行你的节点` --api认证-需要`然后一些像MetaMask工具可能无法进行API调用到您的节点，因为他们没有一个身份验证令牌。
 
-## Format
+##格式
 
-This API uses the `json 2.0` RPC format. For more information on making JSON RPC calls, see [here.](issuing-api-calls.md)
+该API使用` JSON 2.0 ` RPC格式。有关进行JSON RPC调用的更多信息，请参见[这里。]（issuing-api-calls.md）
 
-## Endpoint
+##端点
 
-```text
-/ext/auth
-```
+```文
+/转/ AUTH ```
 
-## Methods
+
+##方法
 
 ### auth.newToken
 
-Creates a new authorization token that grants access to one or more API endpoints.
+创建一个新的授权令牌，该令牌授予对一个或多个API端点的访问权限。
 
-#### **Signature**
+#### **签名** 
 
 ```cpp
 auth.newToken(
@@ -158,18 +158,21 @@ curl -X POST --data '{
         "newPassword":"NEW PASSWORD HERE"
     },
     "id": 1
-}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/auth
-```
+}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/验证```
 
-#### **Example Response**
 
-```cpp
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "success": true
-    },
-    "id": 1
-}
-```
+#### **示例响应** 
 
+```cpp { “ jsonrpc” ：“ 2.0” ，“ result” ：{ “成功” ：true } ，“ id” ：1 } `''
+
+     
+     
+         
+    
+     
+
+
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE1NjQwMDU4NTddfQ==
+-->
