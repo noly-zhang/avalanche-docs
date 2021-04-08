@@ -1,38 +1,38 @@
-# Add a Validator
+＃添加一个验证器
 
-## Introduction
+##简介
 
-The [Primary Network](https://avalanche.gitbook.io/avalanche/build/tutorials/platform/add-a-validator#introduction) is inherent to the Avalanche platform and validates Avalanche’s [built-in blockchains](https://avalanche.gitbook.io/avalanche/learn/platform-overview). In this tutorial, we’ll add a node to the Primary Network and a [subnet](https://avalanche.gitbook.io/avalanche/learn/platform-overview#subnets) on Avalanche.
+在[主要网络（https://avalanche.gitbook.io/avalanche/build/tutorials/platform/add-a-validator#introduction）是固有的雪崩平台和验证雪崩的[内置blockchains（HTTPS： //avalanche.gitbook.io/avalanche/learn/platform-overview）。在本教程中，我们将在主网络上添加一个节点，并在Avalanche上添加一个[子网]（https://avalanche.gitbook.io/avalanche/learn/platform-overview#subnets）。
 
-The P-Chain manages metadata on Avalanche. This includes tracking which nodes are in which subnets, which blockchains exist, and which subnets are validating which blockchains. To add a validator, we’ll issue [transactions](http://support.avalabs.org/en/articles/4587384-what-is-a-transaction) to the P-Chain.
+P链管理雪崩上的元数据。这包括跟踪哪些节点位于哪些子网，哪些区块链存在以及哪些子网正在验证哪些区块链。要添加验证器，我们将向P链发布[交易]（http://support.avalabs.org/en/articles/4587384-what-is-a-transaction）。
 
-{% hint style="danger" %}
-Note that once you issue the transaction to add a node as a validator, there is no way to change the parameters. **You can’t remove your stake early or change the stake amount, node ID, or reward address.** Please make sure you’re using the correct values in the API calls below. If you’re not sure, browse the [Developer FAQ's](http://support.avalabs.org/en/collections/2618154-developer-faq) or ask for help on [Discord.](https://chat.avalabs.org/)
-{% endhint %}
+{％hint style =“ danger”％}请注意，一旦发出事务以将节点添加为验证器，就无法更改参数。**您不能提早删除您的股份或更改股份金额，节点ID或奖励地址。**请确保您在下面的API调用中使用了正确的值。如果不确定，请浏览[开发者常见问题解答]（http://support.avalabs.org/en/collections/2618154-developer-faq）或寻求有关[ Discord。]（https://chat.avalabs.org/）{％endhint％}
 
-## Requirements
 
-You've completed [Run an Avalanche Node](../../get-started.md) and are familiar with [Avalanche's architecture](../../../learn/platform-overview/). In this tutorial, we use [Avalanche’s Postman collection](https://github.com/ava-labs/avalanche-postman-collection) to help us make API calls.
 
-In order to ensure your node is well-connected, make sure that your node can receive and send TCP traffic on the staking port \(`9651` by default\) and that you started your node with command line argument `--public-ip=[YOUR NODE'S PUBLIC IP HERE]`. Failing to do either of these may jeopardize your staking reward.
+##要求
 
-## Add a validator with Avalanche Wallet
+您已经完成[运行雪崩节点]（../../ get-started.md），并且熟悉[雪崩的体系结构]（../../../ learn / platform-overview /）。在本教程中，我们使用[ Avalanche的Postman集合]（https://github.com/ava-labs/avalanche-postman-collection）帮助我们进行API调用。
 
-First, we show you how to add your node as a validator by using [Avalanche Wallet](https://wallet.avax.network).
+为了确保您的节点是连接良好，请确保您的节点可以（接收和发送的跑马圈地端口上的TCP流量\ ` 9651 `默认\），以及您开始使用命令行参数的节点` --public- ip = [您的节点的公共IP在这里] `。如果不执行任何一项操作，可能会损害您的赌注。
 
-Get your node’s ID by calling [`info.getNodeID`](https://avalanche.gitbook.io/avalanche/build/apis/info-api#info-getnodeid):
+##使用雪崩钱包添加验证器
 
-![getNodeID postman](../../../.gitbook/assets/getNodeID-postman.png)
+首先，我们向您展示如何使用[ Avalanche Wallet ]（https://wallet.avax.network）将节点添加为验证器。
 
-```cpp
-curl -X POST --data '{
-    "jsonrpc":"2.0",
-    "id"     :1,
-    "method" :"info.getNodeID"
-}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
-```
+通过调用[获取您的节点的ID ` info.getNodeID ` ]（https://avalanche.gitbook.io/avalanche/build/apis/info-api#info-getnodeid） ：
 
-The response has your node’s ID:
+！[getNodeID postman]（../../../ .gitbook / asset / getNodeID-postman.png）
+
+```CPP
+卷曲- X POST -数据' { “jsonrpc” ：“2.0” ，“ID” ：1 ，“方法” ：“info.getNodeID” } ' -H'内容-类型：应用/ JSON ; ' 127.0 。0.1 ：9650 /分机/信息```
+    
+         
+     
+
+
+
+该响应具有您节点的ID：
 
 ```cpp
 {
@@ -44,9 +44,9 @@ The response has your node’s ID:
 }
 ```
 
-Open [the wallet](https://wallet.avax.network/), and go the `Earn` tab. Choose `Add Validator`.
+打开[钱包]（https://wallet.avax.network/），然后转到“赚取”标签。选择“添加验证器”。
 
-![Web wallet earn tab](../../../.gitbook/assets/web-wallet-earn-tab.png)
+！[网络钱包赚钱标签]（../../../.gitbook/assets/ web-wallet-earn- tab.png）
 
 Fill out the staking parameters. They are explained in more detail below. When you’ve filled in all the staking parameters and double-checked them, click `Confirm`. Make sure the staking period is at least 2 weeks, the delegation fee rate is at least 2%, and you’re staking at least 2,000 AVAX.
 
@@ -353,15 +353,18 @@ The response should include the node we just added:
 }
 ```
 
-When the time reaches `1584042912`, this node will start validating this Subnet. When it reaches `1584121156`, this node will stop validating this Subnet.
+当时间到达' 1584042912 '，这个节点将开始验证该子网。当它到达' 1584121156 '，这个节点将停止验证该子网。
 
-### Whitelisting the Subnet
+###将子网列入白名单
 
-Now that the node has been added as a validator of the subnet, let’s add it to the whitelist of subnets. The whitelist prevents the node from validating a subnet unintentionally.
+现在，已将节点添加为子网的验证器，让我们将其添加到子网的白名单中。白名单可防止节点无意间验证子网。
 
-To whitelist the subnet, restart the node and add the parameter `--whitelisted-subnets` with a comma separated list of subnets to whitelist.
+要将子网列入白名单，请重新启动节点，并将参数“ --whitelisted-subnets ”（以逗号分隔的子网列表）添加到白名单。
 
-The full command is:
+完整的命令是：
 
-`./build/avalanchego --whitelisted-subnets=nTd2Q2nTLp8M9qv2VKHMdvYhtNWX7aTPa4SMEK7x7yJHbcWvr`
+` ./build/avalanchego --whitelisted子网= nTd2Q2nTLp8M9qv2VKHMdvYhtNWX7aTPa4SMEK7x7yJHbcWvr `
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTUzMDk3NjI1XX0=
+-->
