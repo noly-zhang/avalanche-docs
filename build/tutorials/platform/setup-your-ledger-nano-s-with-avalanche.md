@@ -1,32 +1,32 @@
-# Set up Your Ledger Nano S with Avalanche
+＃使用雪崩设置您的Ledger Nano S
 
-The industry standard for safely securing cryptocurrencies is hardware wallets, specialized devices that provide full isolation between your computer and your private keys.
+安全保护加密货币的行业标准是硬件钱包，这是在计算机和私钥之间提供完全隔离的专用设备。
 
-If you want to use the Avalanche address you created earlier, you need to use the [restore from recovery phrase](https://support.ledger.com/hc/en-us/articles/360005434914) procedure using mnemonic phrase you got from the Avalanche wallet. If you're setting up a fresh address, just follow regular [set up as new device](https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-as-new-device) procedure.
+如果要使用之前创建的雪崩地址，则需要使用[还原恢复短语还原]（https://support.ledger.com/hc/en-us/articles/360005434914）过程，使用获得的助记词短语从雪崩的钱包。如果您要设置新地址，只需遵循常规[设置为新设备]（https://support.ledger.com/hc/en-us/articles/360000613793-Set-up-as-new-device ）程序。
 
-The Avalanche Ledger wallet app is currently available via [Ledger Live](https://www.ledger.com/ledger-live) in Experimental Mode.
+目前可以通过[ Ledger Live ]（https://www.ledger.com/ledger-live）在实验模式下使用Avalanche Ledger钱包应用程序。
 
-## How to Set Up Avalanche on Ledger Live <a id="1c80"></a>
+##如何设置雪崩上莱杰直播<一个 ID = “ 1C80 ” > </一>
 
-First, you’ll need to install [Ledger Live](https://www.ledger.com/ledger-live). There’s a download for MacOS, Windows and Linux as well as iOS and Android.
+首先，您需要安装[ Ledger Live ]（https://www.ledger.com/ledger-live）。有适用于MacOS，Windows和Linux以及iOS和Android的下载。
 
-Next, fire up Ledger Live and click the “Settings” button.
+接下来，启动Ledger Live，然后单击“设置”按钮。
 
-![Settings button on ledger live](https://miro.medium.com/max/3052/1*lMnVGJneUAqgRvZBIDv_rA.png)
+！[分类帐实时设置按钮]（https://miro.medium.com/max/3052/1*lMnVGJneUAqgRvZBIDv_rA.png）
 
-Once in settings then go to the “Experimental features” tab.
+进行设置后，转到“实验功能”标签。
 
 ![](https://miro.medium.com/max/4072/1*HrSweaL-kelTl47QRt38iA.png)
 
-Scroll down to the “Developer mode” toggle switch, and enable it.
+向下滚动到“开发人员模式”切换开关，然后启用它。
 
-![Toggle on developer mode](https://miro.medium.com/max/2908/1*qdte7MSvSZdfqfCIUMNp2Q.png)
+！[切换为开发人员模式]（https://miro.medium.com/max/2908/1*qdte7MSvSZdfqfCIUMNp2Q.png）
 
-Now with “Developer mode” enabled, you can go to the “Manager” tab and search for “Avalanche”. Confirm that the Avalanche app is v0.2.1, and click the “Install” button.
+现在启用了“开发人员模式”，您可以转到“管理器”选项卡并搜索“雪崩”。确认Avalanche应用程序为v0.2.1，然后单击“安装”按钮。
 
-![Avalanche Ledger app install button](https://miro.medium.com/max/4040/1*rGFrSBEfxRlIkc-k7hS2Vg.png)
+！[雪崩账本应用安装按钮]（https://miro.medium.com/max/4040/1*rGFrSBEfxRlIkc-k7hS2Vg.png）
 
-You can confirm the installation was successful by going to the “Apps installed” tab where you should see Avalanche v0.2.1.
+您可以转到“已安装的应用程序”选项卡来确认安装成功，在该选项卡中应看到Avalanche v0.2.1。
 
 ![](https://miro.medium.com/max/3020/1*qBSuxqY52-wxWfM-w1YR_w.png)
 
@@ -84,5 +84,8 @@ Finally, you should be able to see the transaction details in our explorer. This
 
 ## More Tools to Come <a id="135b"></a>
 
-Ava Labs is building the Internet of Finance. We’re developing solutions to create a frictionless world by redefining the way people build and use finance applications. A critical part of this infrastructure is a hardware wallet so users can be totally confident that their private keys and coins are completely isolated from any potentially malicious actors. Our newly released Ledger app does just this by following industry best practices to keep users and coins safe and secure.
+Ava Labs正在建设金融互联网。我们正在开发解决方案，以通过重新定义人们构建和使用财务应用程序的方式来创建一个无摩擦的世界。该基础架构的关键部分是硬件钱包，因此用户可以完全确信自己的私钥和硬币与任何潜在的恶意行为者完全隔离。我们新发布的Ledger应用程序通过遵循行业最佳实践来做到这一点，以确保用户和硬币的安全。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTQyMjY1MzE0OV19
+-->
