@@ -1,14 +1,17 @@
-# Nodes and Staking
+＃节点和放样
 
-|  |  |
-| :--- | :--- |
-| [**Add a Validator**](add-a-validator.md) | Add a node to the [Primary Network](https://docs.avax.network/learn/platform-overview) and a [subnet](https://docs.avax.network/learn/platform-overview#subnets) on Avalanche. |
-| [**How to Run Avalanche at Home: Oracle VM VirtualBox**](https://www.youtube.com/watch?v=7Tx1iKg-jL0) | Create a node that runs using Oracle VM VirtualBox container software. |
-| [**How to Run Avalanche at Home: Raspberry Pi 4**](https://www.youtube.com/watch?v=jlur1nef4-E) | Create a node that runs using Raspberry Pi 4. |
-| [**Set Up an Avalanche Node with Amazon Web Services \(AWS\)**](https://docs.avax.network/build/tutorials/nodes-and-staking/setting-up-an-avalanche-node-with-amazon-web-services-aws)**​** | Create a node that runs on AWS. |
-| [**Set Up an Avalanche Node with Microsoft Azure**](https://docs.avax.network/build/tutorials/platform/set-up-an-avalanche-node-with-microsoft-azure)**​** | Create a node that runs on Microsoft Azure. |
-| [**Set up Node on Linux using install script**](set-up-node-with-installer.md) | Create a node on Linux the easy way. |
-| [**Set up Node Monitoring**](setting-up-node-monitoring.md) | Set up infrastructure to monitor an instance of AvalancheGo. |
-| [**Stake AVAX, by Validating or Delegating, with the Avalanche Wallet**](staking-avax-by-validating-or-delegating-with-the-avalanche-wallet.md) | Stake AVAX from the Avalanche wallet. |
-| **​**[**Upgrade Your AvalancheGo Node**](https://docs.avax.network/build/tutorials/nodes-and-staking/upgrade-your-avalanchego-node)**​** | Upgrade your Avalanche node. |
+| | | | ：- ：- | [ **添加验证器** ]（add-a-validator.md）| 将节点添加到[主网络]（https://docs.avax.network/learn/platform-overview）和一个[子网]（https://docs.avax.network/learn/platform-overview#subnets）在雪崩上。| | [ **如何在家中运行Avalanche：Oracle VM VirtualBox ** ]（https://www.youtube.com/watch?v=7Tx1iKg-jL0）| 创建一个使用Oracle VM VirtualBox容器软件运行的节点。| | [ **
 
+  
+  
+如何在家中运行Avalanche：Raspberry Pi 4 **]（https://www.youtube.com/watch?v=jlur1nef4-E）| 创建一个使用Raspberry Pi 4运行的节点。| [ **使用Amazon Web Services \（AWS \）**设置雪崩节点** ]（https://docs.avax.network/build/tutorials/nodes-and-staking/setting-up-an-avalanche-node -with-亚马逊的Web服务-AWS）** ** | 创建在AWS上运行的节点。| | [ **设立一个雪崩节点与微软Azure ** ]（https://docs.avax.network/build/tutorials/platform/set-up-an-avalanche-node-with-microsoft-azure）** **
+
+| 创建一个在Microsoft Azure上运行的节点。| | [ **使用安装脚本**在Linux上设置节点]（set-up-node-with-installer.md）| 在Linux上创建节点的简单方法。| | [ **设置节点监视** ]（setting-up-node-monitoring.md）| 设置基础结构以监视AvalancheGo的实例。| | [ **通过雪崩钱包通过验证或委派来获取AVAX ** ]（通过验证或委派与avalanche-wallet.md来获取avax）| 从雪崩钱包中取出AVAX。| | ** ** [ **
+
+
+
+升级你的AvalancheGo节点**]（https://docs.avax.network/build/tutorials/nodes-and-staking/upgrade-your-avalanchego-node）** ** | 升级您的Avalanche节点。|
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbOTc4ODI3NzA3XX0=
+-->
