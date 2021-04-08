@@ -8,7 +8,7 @@
 
 ## P链API
 
-### ` getCurrentValidators `    
+### ` getCurrentValidators `                                                                     
 
 在v1.0.0中，签名为：
 
@@ -152,5 +152,5 @@ v1.0.4 added an argument `includeReason`. If `false` or not provided, this metho
 由于1.0.6中，` includeReason `参数将被忽略，而且这种方法的反应总是在新的格式。
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzkzODk3ODRdfQ==
+eyJoaXN0b3J5IjpbLTEzOTMzMTA3MjRdfQ==
 -->
