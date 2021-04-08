@@ -1,42 +1,42 @@
-# Transfer AVAX Between the X-Chain and P-Chain
+＃在X链和P链之间传输AVAX
 
-## Introduction
+##简介
 
-AVAX tokens exist on the X-Chain, where they can be traded, on the P-Chain, where they can be provided as a stake when validating the Primary Network, and on the C-Chain, where they can be used in smart contracts or to pay for gas. Avalanche supports movement of AVAX between these chains, and in the future, Avalanche will support more generic atomic swaps between chains. In this tutorial, we’ll send AVAX tokens between the X-Chain and P-Chain.
+AVAX令牌存在于X链上，可以在其中进行交易；在P链上，可以在验证主网络时将其作为股份提供；在C链上，可以在智能合约中使用它们。或支付汽油。Avalanche支持AVAX在这些链之间的移动，并且将来，Avalanche将支持链之间的更多通用原子交换。在本教程中，我们将在X链和P链之间发送AVAX令牌。
 
-## Requirements
+##要求
 
-You've completed [Getting Started](../../get-started.md) and are familiar with [Avalanche's architecture](../../../learn/platform-overview/).
+您已完成[入门]（../../ get-started.md），并熟悉[ Avalanche的体系结构]（../../../ learn / platform-overview /）。
 
-In order to send AVAX, you need to have some AVAX! You can get real AVAX by buying it on an exchange, or you can get testnet AVAX from the [AVAX Test Faucet](https://faucet.avax-test.network), which is a free and easy way to get to play around with Avalanche.
+为了发送AVAX，您需要安装一些AVAX！您可以通过在交易所购买来获得真实的AVAX，也可以从[ AVAX Test Faucet ]（https://faucet.avax-test.network）获得testnet AVAX ，这是一种免费，便捷的游戏方式与雪崩有关。
 
-## Transferring AVAX Using the Web Wallet
+##使用网络钱包传输AVAX
 
-The easiest way to transfer AVAX between chains is to use [the Avalanche Wallet](https://wallet.avax.network/), which is a non-custodial and secure way to access and move AVAX.
+在链之间传输AVAX的最简单方法是使用[ Avalanche Wallet ]（https://wallet.avax.network/），这是一种非托管且安全的访问和移动AVAX的方法。
 
-The Avalanche Wallet source code can be found [here](https://github.com/ava-labs/avalanche-wallet).
+可以在[此处]（https://github.com/ava-labs/avalanche-wallet）中找到Avalanche Wallet的源代码。
 
-### Step 1 - Open the Avalanche Wallet
+###步骤1-打开雪崩钱包
 
-![Image for post](../../../.gitbook/assets/wallet-x2p-01-login.png)
+！[发布图片]（../../../.gitbook/assets/wallet-x2p-01-login.png）
 
-Select **Access Wallet** to enter your wallet. To connect the wallet to a network other than the main Avalanche network, select **Mainnet** and choose the network to connect to.
+选择**访问钱包**以输入您的钱包。要将钱包连接到除Avalanche主网络之外的其他网络，请选择** Mainnet **并选择要连接的网络。
 
-### Step 2 - Log In to Your Wallet
+###步骤2-登录到电子钱包
 
-You can access your wallet using the private key, mnemonic key phrase, keystore file or Ledger Nano S.
+您可以使用私钥，助记词短语，密钥库文件或Ledger Nano S访问您的钱包。
 
-![Image for post](../../../.gitbook/assets/wallet-x2p-02-access.png)
+！[发布图片]（../../../.gitbook/assets/wallet-x2p-02-access.png）
 
-After a successful login you will see your balance, assets portfolio and various other information.
+成功登录后，您将看到余额，资产组合和其他各种信息。
 
-### Step 3 - Go to the Cross Chain Tab
+###步骤3-转到“交叉链”选项卡
 
-![Image for post](../../../.gitbook/assets/wallet-x2p-03-earn.png)
+！[发布图片]（../../../.gitbook/assets/wallet-x2p-03-earn.png）
 
-Functionality for transferring tokens between chains is on the **Cross Chain** tab.
+功能为链之间传送令牌是在**跨链**标签。
 
-### Step 4 - Enter Amount to Transfer
+###步骤4-输入转帐金额
 
 You will be presented with a choice for **Source Chain** and **Destination Chain**. Select X-Chain and P-Chain, respectively. You will see your X and P balances, and an input field for entering the amount to transfer from source to destination chain.
 
@@ -290,11 +290,14 @@ curl -X POST --data '{
 
 Note that `to` is the same address specified in our call to [`platform.exportAVAX`](../../avalanchego-apis/platform-chain-p-chain-api.md#platform-exportavax).
 
-Just as before, we can call [`avm.getBalance`](../../avalanchego-apis/exchange-chain-x-chain-api.md#avm-getbalance) to verify the funds were received. The balance should have increased by `.003` AVAX minus the transaction fee.
+与以前一样，我们可以称之为[ ` avm.getBalance ` ]（../../ avalanchego的API / exchange-chain-x-chain-api.md＃AVM-为getBalance）来验证收到的资金。余额应该增加` 0.003 ` AVAX减去交易手续费。
 
-## Wrapping Up
+##总结
 
-That’s it! Now, you can swap AVAX back and forth between the X-Chain and P-Chain, both by using the Avalanche Wallet, and by calling the appropriate API calls on an Avalanche node.
+而已！现在，您既可以使用雪崩钱包，也可以通过在雪崩节点上调用适当的API调用来在X链和P链之间来回交换AVAX。
 
-Now you can use the tokens on the P-Chain to [add a node as a validator](../nodes-and-staking/add-a-validator.md) on the Primary Network.
+现在，您可以使用P链上的令牌[在主网络上[将节点添加为验证器]（../nodes-and-staking/add-a-validator.md）。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE4MzM5NDE2MjddfQ==
+-->
