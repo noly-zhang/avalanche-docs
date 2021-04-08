@@ -1,28 +1,28 @@
 ---
-description: The C-Chain is an instance of the Ethereum Virtual Machine (EVM)
----
+描述：C链是以太坊虚拟机（EVM）的实例-
 
-# Contract Chain \(C-Chain\) API
 
-_Note: Ethereum has its own notion of `networkID` and `chainID`. These have no relationship to Avalanche’s view of networkID and chainID and are purely internal to the_ [_C-Chain_](../../learn/platform-overview/#contract-chain-c-chain)_. On Mainnet, the C-Chain uses `1` and `43114` for these values. On the Fuji Testnet, it uses `1` and `43113` for these values. `networkID` and `chainID` can also be obtained using the `net_version` and `eth_chainId` methods shown below._
+＃合约链\（C链\）API
 
-## Deploying a Smart Contract
+_注意：复仇军有自己的想法`网络ID `和` chainID `。它们与Avalanche的networkID和chainID的视图没有关系，并且完全在the_ [ _ C-Chain _ ]（../../ learn / platform-overview /＃contract-chain-c-chain）_内部。上Mainnet，C形链使用` 1 `和` 43114 `为这些值。在富士Testnet，它使用` 1 `和` 43113 `这些值。`网络ID `和`chainID `也可以使用所获得的` net_version `和` eth_chainId `所示below._方法
 
-{% page-ref page="../tutorials/smart-contracts/deploy-a-smart-contract-on-avalanche-using-remix-and-metamask.md" %}
+##部署智能合约
 
-## Ethereum APIs
+{％page-ref page =“ ../ tutorials / smart-contracts / deploy-a-smart-contract-on avalanche-using-remix-and-metamask.md”％}
 
-### Ethereum API Endpoints
+##以太坊API
 
-#### JSON-RPC Endpoints
+###以太坊API端点
 
-To interact with C-Chain via the JSON-RPC endpoint:
+#### JSON-RPC端点
 
-```cpp
-/ext/bc/C/rpc
-```
+通过JSON-RPC端点与C-Chain交互：
 
-To interact with other instances of the EVM via the JSON-RPC endpoint:
+```CPP / EXT / BC / ç / RPC ```
+
+
+
+要通过JSON-RPC端点与EVM的其他实例进行交互，请执行以下操作：
 
 ```cpp
 /ext/bc/blockchainID/rpc
@@ -516,15 +516,18 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/bc/C/avax
 ```
 
-#### Example Response
+####示例响应
 
-```javascript
-{
-    "jsonrpc": "2.0",
-    "result": {
-        "address": "0xc876DF0F099b3eb32cBB78820d39F5813f73E18C"
-    },
-    "id": 1
-}
-```
+```javascript { “ jsonrpc” ：“ 2.0” ，“结果” ：{ “地址” ：“ 0xc876DF0F099b3eb32cBB78820d39F5813f73E18C” } ，“ id” ：1 } `''
 
+     
+     
+         
+    
+     
+
+
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNTAyMDE5NjNdfQ==
+-->
