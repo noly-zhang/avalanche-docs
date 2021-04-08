@@ -1,26 +1,26 @@
-# Deploy a Smart Contract on Avalanche Using Remix and MetaMask
+＃使用Remix和MetaMask在雪崩上部署智能合约
 
-## Introduction
+##简介
 
-![Primary Network](../../../.gitbook/assets/primary-network.png)
+！[主要网络]（../../../.gitbook/assets/ primary- network.png）
 
-Avalanche's Primary Network is a subnet that has three chains: P-Chain, X-Chain, and C-Chain. The C-Chain is an instance of the Ethereum Virtual Machine powered by Avalanche’s Snowman consensus protocol. The [C-Chain RPC](../../avalanchego-apis/contract-chain-c-chain-api.md) can do anything a typical Ethereum client can by using the Ethereum-standard RPC calls. The immediate benefits of using the C-Chain rather than Ethereum are all of the benefits of using Avalanche. These properties that could considerably improve the performance of DApps and the user experience.
+雪崩的主网络是一个具有三个链的子网：P链，X链和C链。C链是由Avalanche的Snowman共识协议支持的以太坊虚拟机的实例。所述[ C-链RPC ]（../../ avalanchego的API / contract-chain-c-chain-api.md）可以通过使用复仇标准RPC调用做任何一个典型的客户机复仇罐。使用C链而不是以太坊的直接好处就是使用雪崩的所有好处。这些属性可以显着提高DApp的性能和用户体验。
 
-Today, we will deploy and test a smart contract on Avalanche using Remix and MetaMask.
+今天，我们将使用Remix和MetaMask在Avalanche上部署和测试智能合约。
 
-## Step 1: Setting up MetaMask
+##步骤1：设置MetaMask
 
-Log in to MetaMask -&gt; Click the Network drop-down -&gt; Select Custom RPC
+登录到MetaMask- ＆gt; 点击网络下拉菜单- ＆gt; 选择自定义RPC
 
-![metamask network dropdown](../../../.gitbook/assets/metamask-network-dropdown.png)
+！[metamask网络下拉菜单]（../../../ .gitbook / assets / metamask-network-dropdown.png）
 
-#### **Avalanche Mainnet Settings:**
+#### ** Avalanche Mainnet设置：** 
 
-* **Network Name**: Avalanche Mainnet C-Chain
-* **New RPC URL**: [https://api.avax.network/ext/bc/C/rpc](https://api.avax.network/ext/bc/C/rpc)
-* **ChainID**: `0xa86a`
-* **Symbol**: `AVAX`
-* **Explorer**: [https://cchain.explorer.avax.network/](https://cchain.explorer.avax.network/)
+* **网络名称**：雪崩主网C链* **新的RPC URL **：[ https://api.avax.network/ext/bc/C/rpc ]（https：//api.avax。网络/ EXT / BC / C / RPC）* ** ChainID **：` 0xa86a ` * **符号**：` AVAX ` * **资源管理器**：[ https://cchain.explorer.avax.network/ ]（https://cchain.explorer.avax.network/）
+
+
+
+
 
 #### **FUJI Testnet Settings:**
 
@@ -92,5 +92,8 @@ The contract ABI and Bytecode are available on the compiler tab.
 
 ![ABI bytecode](../../../.gitbook/assets/abi-bytecode.png)
 
-If you had any difficulties following this tutorial or simply want to discuss Avalanche with us, you can join our community at [Discord](https://chat.avalabs.org/)!
+如果您在阅读本教程时遇到任何困难，或者只是想与我们讨论雪崩，可以通过[ Discord ]（https://chat.avalabs.org/）加入我们的社区！
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTA5MTkxOTc0M119
+-->
