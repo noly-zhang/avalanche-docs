@@ -1,16 +1,16 @@
 ---
-description: Learn the core concepts and architecture of Avalanche
----
+描述：了解雪崩的核心概念和体系结构-
 
-# Platform Overview
 
-Avalanche features 3 built-in blockchains: [**Exchange Chain \(X-Chain\)**](./#exchange-chain-x-chain), [**Platform Chain \(P-Chain\)**](./#platform-chain-p-chain), and [**Contract Chain \(C-Chain**\)](./#contract-chain-c-chain). All 3 blockchains are [validated](http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator) and secured by the [**Primary Network**](http://support.avalabs.org/en/articles/4135650-what-is-the-primary-network). The Primary Network is a special [subnet](http://support.avalabs.org/en/articles/4064861-what-is-a-subnetwork-subnet), and all members of all custom subnets must also be a member of the Primary Network by staking at least 2,000 AVAX.
+＃平台概述
 
-Here are tutorials on [creating a subnet](../../build/tutorials/platform/create-a-subnet.md) and [adding validators](../../build/tutorials/nodes-and-staking/add-a-validator.md) to a subnet.
+雪崩具有3个内置的区块链：[ **交换链\（X-Chain \）** ]（.. ## exchange-chain-x-chain），[ **平台链\（P-Chain \）** ]（./# platform-chain-p-chain）和[ **合约链\（C链** \） ]（./# contract-chain-c-chain）。所有3个区块链均经过[验证]（http://support.avalabs.org/en/articles/4064704-what-is-a-blockchain-validator）并由[ **主网络** ]（http：/ /support.avalabs.org/en/articles/4135650-what-is-the-primary-network）。主网络是一个特殊的[子网]（http://support.avalabs.org/en/articles/4064861-what-is-a-subnetwork-subnet），并且所有自定义子网的所有成员还必须是以下成员的成员在主要网络中投放至少2,000 AVAX。
 
-![Primary network](../../.gitbook/assets/primary-network.png)
+这是有关[创建子网]（../../ build / tutorials / platform / create-a-subnet.md）和[添加验证器]（../../ build / tutorials / nodes-and- staking / add-a-validator.md）添加到子网中。
 
-## Subnets
+！[主要网络]（../../.gitbook/assets/primary-network.png）
+
+##子网
 
 A **subnet**, or subnetwork, is a dynamic set of validators working together to achieve consensus on the state of a set of blockchains. Each blockchain is validated by exactly one subnet. A subnet can validate many blockchains. A node may be a member of many subnets.
 
@@ -80,11 +80,14 @@ The X-Chain is an instance of the Avalanche Virtual Machine \(AVM\). The [X-Chai
 
 The **P-Chain** is the metadata blockchain on Avalanche and coordinates validators, keeps track of active subnets, and enables the creation of new subnets. The P-Chain implements the [Snowman consensus protocol](../../#snowman-consensus-protocol).
 
-The [P-Chain API](../../build/avalanchego-apis/platform-chain-p-chain-api.md) allows clients to create subnets, add validators to subnets, and create blockchains.
+所述[ P-链API（../../构建/ avalanchego的API / platform-chain-p-chain-api.md）允许客户端创建的子网，添加验证器来的子网，并创建blockchains。
 
-## Contract Chain \(C-Chain\)
+##合约链\（C链\）
 
-The **C-Chain** allows for the creation smart contracts using the [C-Chain’s API](../../build/avalanchego-apis/contract-chain-c-chain-api.md).
+在** C-链**允许使用创建智能合同[ C-链的API（/ avalanchego的API / contract-chain-c-chain-api.md ../../版本）。
 
-The C-Chain is an instance of the Ethereum Virtual Machine powered by [Avalanche](../../).
+C链是由[ Avalanche ]（../../）驱动的以太坊虚拟机的实例。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTQwODExMDQxN119
+-->
