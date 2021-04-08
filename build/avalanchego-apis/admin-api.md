@@ -1,48 +1,48 @@
-# Admin API
+＃管理员API
 
-This API can be used for measuring node health and debugging. Note that the Admin API is disabled by default for security reasons. To run a node with the Admin API enabled, use [command line argument](../references/command-line-interface.md) `--api-admin-enabled=true`.
+该API可用于测量节点的运行状况和调试。请注意，出于安全原因，默认情况下禁用Admin API。要运行一个节点与管理API使能，使用[命令行参数]（../引用/ command-line-interface.md）` --api管理员启用=真`。 
 
-## Format
+##格式
 
-This API uses the `json 2.0` RPC format.
+该API使用` JSON 2.0 ` RPC格式。
 
-{% page-ref page="issuing-api-calls.md" %}
+{％page-ref page =“ isinging-api-calls.md”％}
 
-## Endpoint
+##端点
 
-```text
-/ext/admin
-```
 
-## API Methods
 
-### admin.alias
 
-Assign an API endpoint an alias, a different endpoint for the API. The original endpoint will still work. This change only affects this node; other nodes will not know about this alias.
 
-#### **Signature**
 
-```text
-admin.alias({endpoint:string, alias:string}) -> {success:bool}
-```
 
-* `endpoint` is the original endpoint of the API. `endpoint` should only include the part of the endpoint after `/ext/`.
-* The API being aliased can now be called at `ext/alias`.
-* `alias` can be at most 512 characters.
 
-#### **Example Call**
 
-```text
-curl -X POST --data '{
-    "jsonrpc":"2.0",
-    "id"     :1,
-    "method" :"admin.alias",
-    "params": {
-        "alias":"myAlias",
-        "endpoint":"bc/X"
-    }
-}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/admin
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### **Example Response**
 
@@ -215,23 +215,26 @@ admin.stopCPUProfiler() -> {success:bool}
 
 #### **Example Call**
 
-```text
-curl -X POST --data '{
-    "jsonrpc":"2.0",
-    "id"     :1,
-    "method" :"admin.stopCPUProfiler"
-}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/admin
-```
+``` text 
+curl -X POST --data'{ 
+    “ jsonrpc”：“ 2.0”，
+    “ id”：1，
+    “ method”：“ admin.stopCPUProfiler” 
+}'- H'content -type：application / json;' 127.0.0.1:9650/ext/admin ```
 
-#### **Example Response**
 
-```text
-{
-    "jsonrpc":"2.0",
-    "id"     :1,
-    "result" :{
-        "success":true
-    }
-}
-```
+#### **示例响应** 
 
+```文本
+{ 
+    “jsonrpc”： “2.0”，
+    “ID”：1， 
+    “结果”：{ 
+        “成功”：真
+    } 
+} ```
+
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODk2NTUzNzQxXX0=
+-->
