@@ -1,64 +1,64 @@
 ---
-description: >-
-  This page lists API methods, arguments and responses that are deprecated and
-  will be removed or modified in a future release.
----
+说明：>-  此页面列出了不推荐使用的API方法，参数和响应，这些API方法，参数和响应  在将来的版本中将被删除或修改。---
 
-# Deprecated API Calls
 
-## P-Chain API
 
-### `getCurrentValidators`
 
-In v1.0.0, the signature was:
+＃不推荐使用的API调用
 
-```cpp
-platform.getCurrentValidators({subnetID: string}) ->
-{
-    validators: []{
-        startTime: string,
-        endTime: string,
-        stakeAmount: string, //optional
-        nodeID: string,
-        weight: string, //optional
-        rewardOwner: {
-            locktime: string,
-            threshold: string,
-            addresses: string[]
-        },
-        potentialReward: string,
-        delegationFee: string,
-        uptime: string,
-        connected: boolean
-    },
-    delegators: []{
-        startTime: string,
-        endTime: string,
-        stakeAmount: string, //optional
-        nodeID: string,
-        rewardOwner: {
-            locktime: string,
-            threshold: string,
-            addresses: string[]
-        },
-        potentialReward: string,
-    }
-}
-```
+## P链API
 
-In later versions, the signature was as follows. Note that each validator contains a list of its delegators. Please see the next note for current behavior.
+### ` getCurrentValidators `    
 
-```cpp
-platform.getCurrentValidators({subnetID: string}) ->
-{
-    validators: []{
-        startTime: string,
-        endTime: string,
-        stakeAmount: string, //optional
-        nodeID: string,
-        weight: string, //optional
-        rewardOwner: {
-            locktime: string,
+在v1.0.0中，签名为：
+
+cpp
+平台。getCurrentValidators （{ SUBNETID ：串} ） - > {    验证：[ ] {         STARTTIME ：串，        结束时间：串，         stakeAmount ：串，//可选        节点ID ：串，        重量：串，//可选        rewardOwner ：{             LOCKTIME ：
+
+ 
+
+
+ 
+
+ 
+ 
+字符串，
+            阈值：字符串，
+            地址：字符串[ ] } ，         potentialReward ：字符串，        委托费用：字符串，        正常运行时间：字符串，        连接：布尔} ，    委托人：[ ] {         startTime ：字符串，         endTime ：字符串，        赌注数量：
+        
+
+
+
+
+    
+ 
+
+
+串， //可选
+        节点ID ：串，
+         rewardOwner ： {
+             LOCKTIME ：串，
+            阈值：字符串，
+            地址：串[ ] } ，         potentialReward ：串，} } ```
+        
+
+    
+
+
+
+在更高版本中，签名如下。请注意，每个验证器均包含其委托人的列表。请查看下一个注释以了解当前行为。
+
+cpp
+平台。getCurrentValidators （{ SUBNETID ：串} ） - > {    验证：[ ] {         STARTTIME ：串，        结束时间：串，         stakeAmount ：串，//可选        节点ID ：串，        重量：串，//可选        rewardOwner ：{             LOCKTIME ：
+
+ 
+
+
+ 
+
+ 
+ 
+ string,
             threshold: string,
             addresses: string[]
         },
@@ -147,7 +147,10 @@ v1.0.4 added an argument `includeReason`. If `false` or not provided, this metho
 }
 ```
 
-Where `reason` is the reason the transaction was dropped. `reason` is only present if `status` is `"Dropped"`.
+凡`理由'是交易中下跌的原因。`原因`只有存在，如果'状态'是' “丢弃” `。
 
-Since v1.0.6, the `includeReason` argument is ignored, and this method's response is always in the new format.
+由于1.0.6中，` includeReason `参数将被忽略，而且这种方法的反应总是在新的格式。
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTIwMzkzODk3ODRdfQ==
+-->
