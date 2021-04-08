@@ -44,19 +44,19 @@
 
 
 
-#### **Example Response**
+#### **示例响应** 
 
-```text
-{
-    "jsonrpc":"2.0",
-    "id"     :1,
-    "result" :{
-        "success":true
-    }
-}
-```
+```文本
+{ 
+    “jsonrpc”： “2.0”，
+    “ID”：1， 
+    “结果”：{ 
+        “成功”：真
+    } 
+} ```
 
-Now, calls to the X-Chain can be made to either `/ext/bc/X` or, equivalently, to `/ext/myAlias`.
+
+现在，到了X-调用链，可向任一` /转/ BC / X '或等价地，以` / EXT / myAlias `。
 
 ### admin.aliasChain
 
@@ -209,11 +209,11 @@ Stop the CPU profile that was previously started.
 
 #### **Signature**
 
-```text
-admin.stopCPUProfiler() -> {success:bool}
-```
+```文本
+admin.stopCPUProfiler（） - > {成功：布尔} ```
 
-#### **Example Call**
+
+#### **示例调用** 
 
 ``` text 
 curl -X POST --data'{ 
@@ -236,5 +236,5 @@ curl -X POST --data'{
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk2NTUzNzQxXX0=
+eyJoaXN0b3J5IjpbNDg3MjU3NTEzXX0=
 -->
