@@ -8,7 +8,7 @@ _注意：复仇军有自己的想法`网络ID `和` chainID `。它们与Avalan
 
 ##部署智能合约
 
-{％page-ref page =“ ../ tutorials / smart-contracts / deploy-a-smart-contract-on avalanche-using-remix-and-metamask.md”％}
+{％page-ref page =“ ../教程/智能合约/在雪崩中使用智能合约部署remix-and-metamask.md”％}
 
 ##以太坊API
 
@@ -18,25 +18,25 @@ _注意：复仇军有自己的想法`网络ID `和` chainID `。它们与Avalan
 
 通过JSON-RPC端点与C-Chain交互：
 
-```CPP / EXT / BC / ç / RPC ```
+`  ` ` CPP / EXT / BC / C / RPC ` ` `   
 
 
 
 要通过JSON-RPC端点与EVM的其他实例进行交互，请执行以下操作：
 
-```cpp
-/ext/bc/blockchainID/rpc
-```
+` ` ` CPP / EXT / BC / blockchainID / RPC ` ` `
 
-where `blockchainID` is the ID of the blockchain running the EVM.
 
-#### WebSocket Endpoints
 
-To interact with C-Chain via the websocket endpoint:
+其中` blockchainID `是运行EVM的blockchain的ID。
 
-```cpp
-/ext/bc/C/ws
-```
+#### WebSocket端点
+
+通过websocket端点与C-Chain交互：
+
+` ` ` CPP / EXT / BC / C / WS ` ` `
+
+
 
 For example, to interact with the C-Chain's Ethereum APIs via websocket on localhost you can use:
 
@@ -529,5 +529,5 @@ curl -X POST --data '{
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAyMDE5NjNdfQ==
+eyJoaXN0b3J5IjpbODMwNDU5OTkxXX0=
 -->
