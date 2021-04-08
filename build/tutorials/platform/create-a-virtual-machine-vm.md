@@ -1,14 +1,14 @@
-# Create a Virtual Machine \(VM\)
+＃创建一个虚拟机\（VM \）
 
-_The code below is slightly out of date. Some methods, interfaces, and implementations are slightly different than in this tutorial. We’re going to leave this up because the current code is very similar, and this tutorial is still useful in demonstrating how Avalanche’s VM model works._
+_下面的代码有些过时了。一些方法，接口和实现与本教程中的稍有不同。由于当前代码非常相似，因此我们将不再赘述，并且本教程对于演示Avalanche的VM模型如何工作仍然很有用。_
 
-## Introduction
+##简介
 
-One of the core features of Avalanche is the creation of new, custom blockchains, which are defined by [Virtual Machines \(VMs\)](../../../learn/platform-overview/#virtual-machines)
+Avalanche的核心功能之一是创建新的自定义区块链，这些区块链由[虚拟机\（VMs \） ]（../../../ learn / platform-overview /＃virtual-machines）定义
 
-In this tutorial, we’ll create a very simple VM. The blockchain defined by the VM is a timestamp server. Each block in the blockchain contains the timestamp when it was created along with a 32-byte piece of data \(payload\). Each block’s timestamp is after its parent’s timestamp.
+在本教程中，我们将创建一个非常简单的VM。VM定义的区块链是时间戳服务器。区块链中的每个块都包含创建时的时间戳以及32字节的数据\（payload \）。每个块的时间戳都在其父时间戳之后。
 
-Such a server is useful because it can be used to prove a piece of data existed at the time the block was created. Suppose you have a book manuscript, and you want to be able to prove in the future that the manuscript exists today. You add a block to the blockchain where the block’s payload is a hash of your manuscript. In the future, you can prove that the manuscript existed today by showing that the block has the hash of your manuscript in its payload \(this follows from the fact that finding the pre-image of a hash is impossible\).
+这样的服务器很有用，因为它可以用来证明在创建块时存在的一条数据。假设您有一本书的手稿，并且希望将来能够证明该手稿存在。您将一个块添加到区块链，其中该块的有效负载是您的手稿的哈希值。将来，您可以通过显示该块在其有效载荷中具有您的手稿的哈希来证明该手稿今天存在（这是由于无法找到哈希的原像这一事实\）。
 
 Before we get to the implementation of the VM, we’ll look at the interface that a VM must implement to be compatible with the platform’s Avalanche consensus engine. We’ll show and explain all the code in snippets. If you want to see the code in one place, rather than in snippets, you can see it in our [GitHub repository.](https://github.com/ava-labs/avalanchego/tree/master/vms/timestampvm)
 
@@ -105,73 +105,73 @@ You may have noticed the `snowman.Block` type referenced in the `snowman.VM` int
 
 Let’s look at this interface and its methods, which we copy from [`github.com/ava-labs/avalanchego/snow/consensus/snowman/block.go`.](https://github.com/ava-labs/avalanchego/blob/master/snow/consensus/snowman/block.go)
 
-```cpp
-// Block is a block in a blockchain.
-//
-// Blocks are guaranteed to be Verified, Accepted, and Rejected in topological
-// order. Specifically, if Verify is called, then the parent has already been
-// verified. If Accept is called, then the parent has already been accepted. If
-// Reject is called, the parent has already been accepted or rejected.
-//
-// If the status of the block is Unknown, ID is assumed to be able to be called.
-// If the status of the block is Accepted or Rejected; Parent, Verify, Accept,
-// and Reject will never be called.
-type Block interface {
-    // ID returns this block's unique ID.
-    //
-    // Typically, a block's ID is a hash of its byte representation.
-    // A block should return the same ID upon repeated calls.
-    ID() ids.ID
+cpp //块是区块链中的一个块。// //保证按拓扑顺序验证，接受和拒绝块。具体来说，如果调用Verify，则父级已经//被验证。如果调用了“接受”，则父级已被接受。如果调用//拒绝，则表明父级已被接受或拒绝。// //如果块的状态为“未知”，则假定可以调用ID。//如果块的状态为“已接受”或“已拒绝”；父项，验证，接受和/或拒绝将永远不会被调用。type Block interface { // ID返回此块的唯一ID。//
 
-    // Accept this block.
-    //
-    // This block will be accepted by every correct node in the network.
-    Accept()
 
-    // Reject this block.
-    //
-    // This block will not be accepted by any correct node in the network.
-    Reject()
 
-    // Status returns this block's current status.
-    //
-    // If Accept has been called on n block with this ID, Accepted should be
-    // returned. Similarly, if Reject has been called on a block with this
-    // ID, Rejected should be returned. If the contents of this block are
-    // unknown, then Unknown should be returned. Otherwise, Processing should be
-    // returned.
-    Status() Status
 
-    // Parent returns this block's parent.
-    //
-    // If the parent block is not known, a Block should be returned with the
-    // status Unknown.
-    Parent() Block
 
-    // Verify that the state transition this block would make if accepted is
-    // valid. If the state transition is invalid, a non-nil error should be
-    // returned.
-    //
-    // It is guaranteed that the Parent has been successfully verified.
-    Verify() error
 
-    // Bytes returns the binary representation of this block.
-    //
-    // This is used for sending blocks to peers. The bytes should be able to be
-    // parsed into the same block on another node.
-    Bytes() []byte
-}
-```
 
-## Libraries
 
-We’ve created some types that your VM implementation can embed \(embedding is like Go’s version of inheritance\) in order to handle boilerplate code.
 
-In our example, we use both of the library types below, and we encourage you to use them too.
+
+
+    
+    
+    //通常，块的ID是其字节表示形式的哈希值。//重复调用时，块应返回相同的ID。ID （） ID 。ID //接受此阻止。// //网络中的每个正确节点都将接受此块。接受（）//拒绝此块。// //网络中任何正确的节点都不会接受此块。Reject （）//状态返回该块的当前状态。// //如果在具有该ID的n块上调用了Accept，则应该//返回Accepted 。同样，如果已使用此命令在块上调用了拒绝
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    // ID，应返回已拒绝。如果此块的内容未知，则应返回未知。否则，应返回//处理。状态（）状态//父级返回此块的父级。// //如果父块未知，则应返回状态为Unknown的Block 。父（）块// //验证如果接受此块将进行的状态转换//是有效的。如果状态转换无效，则应该//返回非nil错误。// //确保已成功验证父项。验证（）
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    错误//字节返回此块的二进制表示形式。// //用于将块发送给同级。//这些字节应该能够解析为另一个节点上的同一块。字节（）[ ]字节} ```
+
+    
+    
+    
+    
+     
+
+
+
+##库
+
+我们创建了一些类型，您的VM实施可以嵌入\（嵌入类似于Go的继承版本\）以处理样板代码。
+
+在我们的示例中，我们使用下面的两种库类型，建议您也使用它们。
 
 ### core.SnowmanVM
 
-This type, a struct, contains methods and fields common to all implementations of the `snowman.ChainVM` interface.
+这种类型中，结构体，包含方法和字段共同到的所有实现` snowman.ChainVM `接口。
 
 #### **Methods**
 
@@ -218,228 +218,228 @@ Your VM implementation will probably override `Accept` and `Reject` so that thes
 
 Now, we know the interface our VM must implement and the libraries we can use to build a VM.
 
-Let’s write our VM, which implements `snowman.VM` and whose blocks implement `snowman.Block`.
+让我们写我们的VM，它实现了` snowman.VM `，其块执行` snowman.Block `。
 
-### Block
+###块
 
-First, let’s look at our block implementation.
+首先，让我们看一下我们的块实现。
 
-The type declaration is:
+类型声明为：
 
-```cpp
-// Block is a block on the chain.
-// Each block contains:
-// 1) A piece of data (the block's payload)
-// 2) The (unix) timestamp when the block was created
-type Block struct {
-    *core.Block           `serialize:"true"`
-    Data        [32]byte  `serialize:"true"`
-    Timestamp   int64     `serialize:"true"`
-}
-```
+cpp //块是链上的一个块。//每个块包含：// 1）一条数据（该块的有效载荷）// 2）创建该块时的（unix）时间戳记，类型为Block struct { * core 。块`serialize ：“ true” `    数据        [ 32 ]字节`serialize ：“ true” `    时间戳int64`serialize ：“ true” ` } ```
 
-The `serialize:"true"` tag indicates when a block is persisted in the database or sent to other nodes. The field with the tag is included in the serialized representation.
 
-#### **Verify**
 
-```cpp
-// Verify returns nil iff this block is valid.
-// To be valid, it must be that:
-// b.parent.Timestamp < b.Timestamp <= [local time] + 1 hour
-func (b *Block) Verify() error {
-    // Check to see if this block has already been verified by calling Verify on the
-    // embedded *core.Block.
-    // If there is an error while checking, return an error.
-    // If the core.Block says the block is accepted, return accepted.
-    if accepted, err := b.Block.Verify(); err != nil || accepted {
-        return err
-    }
 
-    // Get [b]'s parent
-    parent, ok := b.Parent().(*Block)
-    if !ok {
-        return errors.New("error while retrieving block from database")
-    }
+ 
+    
 
-    // Ensure [b]'s timestamp is after its parent's timestamp.
-    if b.Timestamp < time.Unix(parent.Timestamp, 0).Unix() {
-        return errors.New("block's timestamp is more than 1 hour ahead of local time")
-    }
 
-    // Ensure [b]'s timestamp is not more than an hour 
-    // ahead of this node's time
-    if b.Timestamp >= time.Now().Add(time.Hour).Unix() {
-        return errors.New("block's timestamp is more than 1 hour ahead of local time")
-    }
 
-    // Our block inherits VM from *core.Block.
-    // It holds the database we read/write, b.VM.DB
-    // We persist this block to that database using VM's SaveBlock method.
-    b.VM.SaveBlock(b.VM.DB, b)
 
-    // Then we flush the database's contents
-    return b.VM.DB.Commit()
-}
-```
 
-That’s all the code for our block implementation! All of the other methods of `snowman.Block`, which our `Block` must implement, are inherited from `*core.Block`.
+所述`的serialize：“真” `标签表示当块在数据库中被持久或发送到其它节点。带有标签的字段包含在序列化表示中。
 
-### Virtual Machine
+#### **验证** 
 
-Now, let’s look at the implementation of VM, which implements the `snowman.VM` interface.
+cpp //如果该块有效，校验返回nil。//要有效，它必须是：// b.parent.Timestamp <b.Timestamp <= [本地时间] + 1小时func （ b * Block ）Verify （） error { //检查是否阻止已经通过调用// //嵌入的* core.Block进行验证。//如果检查时出错，则返回错误。//如果core.Block表示已接受该块，则返回接受。如果被接受，则错误：= b 。块。验证（）
 
-The declaration is:
 
-```cpp
-// This Virtual Machine defines a blockchain that acts as a timestamp server
-// Each block contains a piece of data (payload) and the timestamp when it was created
-type VM struct {
-    core.SnowmanVM
 
-    // codec serializes and de-serializes structs to/from bytes
-    codec codec.Codec
+  
+    
+    
+    
+    
+    ; err ！= nil || accept { return err } //得到[b]的父母    parent ，好：= b 。父母（）。（*块）如果！好的{返回错误。新建（“从数据库检索块时出错” ）} //确保[b]的时间戳在其父时间戳之后。如果b 。时间戳<时间。的Unix
+        
+    
 
-    // Proposed pieces of data that haven't been put into a block and proposed yet
-    mempool [][32]byte
-}
-```
+    
 
-#### **Initialize**
+     
+        
+    
 
-```cpp
-// Initialize this vm
-// [ctx] is the execution context
-// [db] is this database we read/write
-// [toEngine] is used to notify the consensus engine that new blocks are
-//   ready to be added to consensus
-// The data in the genesis block is [genesisData]
-func (vm *VM) Initialize(
-    ctx *snow.Context,
-    db database.Database,
-    genesisData []byte,
-    toEngine chan<- common.Message,
-    _ []*common.Fx,
-) error {
-    // First, we initialize the core.SnowmanVM.
-    // vm.ParseBlock, which we'll see further on, tells the core.SnowmanVM how to deserialize
-    // a block from bytes
-    if err := vm.SnowmanVM.Initialize(ctx, db, vm.ParseBlock, toEngine); err != nil {
-        ctx.Log.Error("error initializing SnowmanVM: %v", err)
-        return err
-    }
-    // Set vm's codec to a new codec, which we can use to 
-    // serialize and deserialize blocks
-    vm.codec = codec.NewDefault()
+    
+    （父级，时间戳， 0 ）。Unix （） {返回错误。新建（“块的时间戳比本地时间提前1个小时以上” ））} //确保[b]的时间戳不超过该节点时间的//小时（如果b）。时间戳> = time 。现在（）。加（时间。小时）。Unix （）{返回错误
+        
+    
 
-    // If the database is empty, initialize the state of this blockchain
-    // using the genesis data
-    if !vm.DBInitialized() {
-        // Ensure that the genesis bytes are no longer than 32 bytes
-        // (the genesis block, like all blocks, holds 32 bytes of data)
-        if len(genesisData) > 32 {
-            return errors.New("genesis data should be bytes (max length 32)")
-        }
+    
+    
+     
+        。New （“块的时间戳比本地时间早1小时以上” ））} //我们的块从* core.Block继承了VM。//它包含我们读取/写入的数据库b.VM.DB //我们使用VM的SaveBlock方法将该块持久保存到该数据库中。    b 。虚拟机。SaveBlock （ b 。 VM 。 DB ， b ）//然后刷新该数据库的内容返回b 。虚拟机。DB 。提交（）} ```
+    
 
-        // genesisData is a byte slice (because that's what the snowman.VM interface says)
-        // but each block contains an byte array.
-        // To make the types match, take the first [dataLen] bytes from genesisData
-        // and put them in an array
-        var genesisDataArr [dataLen]byte
-        copy(genesisDataArr[:], genesisData)
+    
+    
+    
 
-        // Create the genesis block
-        // Timestamp of genesis block is 0. It has no parent, so we say the parent's ID is empty.
-        // We'll come to the definition of NewBlock later.
-        genesisBlock, err := vm.NewBlock(ids.Empty, genesisDataArr, time.Unix(0, 0))
-        if err != nil {
-            vm.Ctx.Log.Error("error while creating genesis block: %v", err)
-            return err
-        }
 
-        // Persist the genesis block to the database.
-        // Normally, a block is saved to the database when Verify() is called on the block.
-        // We don't call Verify on the genesis block, though. (It has no parent so
-        // it wouldn't pass verification.)
-        // vm.DB is the database, and was set when we initialized the embedded SnowmanVM.
-        if err := vm.SaveBlock(vm.DB, genesisBlock); err != nil {
-            vm.Ctx.Log.Error("error while saving genesis block: %v", err)
-            return err
-        }
+    
+    
 
-        // Accept the genesis block.
-        // Sets [vm.lastAccepted] and [vm.preferred] to the genesisBlock.
-        genesisBlock.Accept()
 
-        // Mark the database as initialized so that in the future when this chain starts
-        // it pulls state from the database rather than starting over from genesis
-        vm.SetDBInitialized()
 
-        // Flush the database
-        if err := vm.DB.Commit(); err != nil {
-            vm.Ctx.Log.Error("error while commiting db: %v", err)
-            return err
-        }
-    }
-    return nil
-}
-```
+这就是我们块实现的所有代码！所有其他方法` snowman.Block '，这对我们'块'必须实现从继承` * core.Block `。
 
-#### **proposeBlock**
+###虚拟机
 
-This method adds a piece of data to the mempool and notifies the consensus layer of the blockchain that a new block is ready to be built and voted on. We’ll see where this is called later.
+现在，让我们来看看虚拟机的实现，它实现了` snowman.VM `接口。
 
-```cpp
-// proposeBlock appends [data] to [p.mempool].
-// Then it notifies the consensus engine
-// that a new block is ready to be added to consensus
-// (namely, a block with data [data])
-func (vm *VM) proposeBlock(data [dataLen]byte) {
-    vm.mempool = append(vm.mempool, data)
-    vm.NotifyBlockReady()
-}
-```
+声明是：
 
-#### **ParseBlock**
+cpp //这个虚拟机定义了一个充当时间戳服务器的区块链//每个块都包含一块数据（有效载荷）和创建时的时间戳，类型为VM struct {     core 。SnowmanVM //编    解码器在字节编解码器codec中对结构进行序列化和反序列化。编解码器//尚未放入块中并尚未提出建议的    内存块[ ] [ 32 ] byte } ```
 
-```cpp
-// ParseBlock parses [bytes] to a snowman.Block
-// This function is used by the vm's state to unmarshal blocks saved in state
-// and by the consensus layer when it receives the byte representation of a block
-// from another node
-func (vm *VM) ParseBlock(bytes []byte) (snowman.Block, error) {
-    // A new empty block
-    block := &Block{}
 
-    // Unmarshal the byte repr. of the block into our empty block
-    err := vm.codec.Unmarshal(bytes, block)
+ 
 
-    // Initialize the block
-    // (Block inherits Initialize from its embedded *core.Block)
-    block.Initialize(bytes, &vm.SnowmanVM)
-    return block, err
-}
-```
 
-#### **NewBlock**
+    
 
-```cpp
-// NewBlock returns a new Block where:
-// - the block's parent has ID [parentID]
-// - the block's data is [data]
-// - the block's timestamp is [timestamp]
-func (vm *VM) NewBlock(parentID ids.ID, data [dataLen]byte, timestamp time.Time) (*Block, error) {
-    // Create our new block
-    block := &Block{
-        Block:     core.NewBlock(parentID),
-        Data:      data,
-        Timestamp: timestamp.Unix(),
-    }
 
-    // Get the byte representation of the block
-    blockBytes, err := vm.codec.Marshal(block)
-    if err != nil {
-        return nil, err
-    }
+    
+
+
+
+
+#### **初始化** 
+
+cpp //初始化虚拟机// [ctx]是执行上下文// [db]是我们读/写的数据库// [toEngine]用于通知共识引擎新块已准备就绪//被添加到共识//在成因块中的数据是[genesisData] FUNC （ VM * VM ）初始化（     CTX *雪。上下文，     DB数据库。数据库，     genesisData [ ]字节，     toEngine瓒< -常见。消息，
+
+
+
+
+
+
+  
+
+
+
+
+     _ [ ] *常见的。Fx ，）错误{ //首先，我们初始化core.SnowmanVM。//我们将进一步介绍的vm.ParseBlock告诉core.SnowmanVM如果err ：= vm，如何从字节反序列化一个块。SnowmanVM 。初始化（ CTX ，分贝， VM 。 ParseBlock ， toEngine ）; err ！= nil {         ctx 。日志。
+
+    
+    
+    
+    
+Error（“错误初始化SnowmanVM：％v”，err）        return err     }     //将vm的编解码器设置为新的编解码器，我们可以用来    //对块进行序列化和反序列化    vm.codec = codec.NewDefault（）    //如果数据库为空，    //    如果没有！vm.DBInitialized（）{         //请确保创世字节不超过32字节        // //使用创世数据初始化此区块链的状态//（创世区块与所有区块一样，保持32数据字节）
+
+
+
+
+
+
+
+
+
+
+
+        if len （ genesisData ） >  32  {返回错误。New （“ genesis数据应该是字节（最大长度为32）” ）} // genesisData是一个字节片（因为那是snowman.VM接口所说的）//但每个块都包含一个字节数组。//要使类型匹配，请从genesisData获取头[[dataLen]个字节// //并将它们放入数组中        vargenesisDataArr [ dataLen ]字节副本（ genesisDataArr [ ：] ， genesisData ）//创建genesis块
+            
+        
+
+        
+        
+        
+        
+
+        
+
+        
+        //创世块的时间戳为0。它没有父代，所以我们说父代的ID为空。//稍后我们将介绍NewBlock的定义。        genesisBlock ，错误：= vm 。NewBlock （ IDS 。清空， genesisDataArr ，时间。Unix的（0 ，0 ））如果ERR ！=零{             VM 。Ctx 。日志。错误（“创建创世块时出错：％v” ，错误
+        
+ 
+        
+）return err } //将创世块保留到数据库中。//通常，在该块上调用Verify（）时，会将一个块保存到数据库中。//不过，我们不会在创世块上调用“验证”。（它没有父代，因此//它不会通过验证。）// vm.DB是数据库，是在初始化嵌入式SnowmanVM时设置的。如果err ：= vm 。SaveBlock （ VM 。 DB ， genesisBlock ）; err ！= nil {             vm 。Ctx 。日志。
+            
+        
+
+        
+        
+        
+        
+        
+        
+错误（“保存创世块时出错：％v” ， err ）return err } //接受创世块。//将[vm.lastAccepted]和[vm.preferred]设置为genesisBlock。        genesisBlock 。Accept （）//将数据库标记为已初始化，以便将来在此链启动时//从数据库中拉出状态，而不是从创世        vm开始。SetDBInitialized （）//如果err ：= vm则刷新数据库。DB 。提交（
+            
+        
+
+        
+        
+
+
+        
+        
+
+
+        
+        ）; err ！= nil {
+             vm 。Ctx 。日志。错误（“提交数据库时出错：％v” ， err ）return err } } return nil } ```
+            
+        
+    
+    
+
+
+
+#### ** OffersBlock ** 
+
+该方法将一条数据添加到内存池，并通知区块链的共识层已准备好构建新区块并对其进行投票。稍后我们将在何处调用它。
+
+cpp // proposalBlock将[data]附加到[p.mempool]。//然后通知共识引擎//已准备好将新块添加到共识// //（即，具有数据[data]的块）func （ vm * VM ）proposalBlock （ data [ dataLen ] byte ）{     vm 。内存池=追加（ VM 。内存池，数据）     VM 。NotifyBlockReady （）} ```
+
+
+
+
+   
+ 
+
+
+
+
+#### ** ParseBlock **                                  
+
+cpp // ParseBlock将[bytes]解析为一个雪人。Block // vm的状态使用此函数来解组保存在状态//中的块，//共识层在接收到块的字节表示时//来自另一个节点的func （ vm * VM ）ParseBlock （字节[ ]字节）（雪人。块，错误）{ //一个新的空块    block ：= ＆ Block { } //解组字节代表。块到我们的空块    错误：= vm 。编解码器。Unmarshal （字节，块）//初始化块//（块从其嵌入式* core.Block继承Initialize）    块。初始化（字节，＆ VM 。 SnowmanVM ）返回块， ERR } ```
+
+
+
+
+    
+    
+ 
+
+    
+
+
+    
+    
+ 
+    
+
+
+
+#### ** NewBlock **                                  
+
+cpp // NewBlock返回一个新的块，其中：//-块的父代具有ID [parentID] //-块的数据为[data] //-块的时间戳为[timestamp] func （ vm * VM ）NewBlock （的parentID IDS 。 ID ，数据[ DATALEN ]字节，时间戳时间。时间）（*块，错误）{ //创建我们新的块    的块：= ＆块{
+
+
+
+
+    
+    
+ 
+        Block：     核心。NewBlock （ parentID ），
+        数据：      数据，
+        时间戳：时间戳。Unix （），} //获取块    blockBytes的字节表示， err ：= vm 。编解码器。如果err ！= nil则进行元帅（块）{ return nil ， err }
+    
+
+    
+
+    
+        
+    
 
     // Initialize the block by providing it with its byte representation
     // and a reference to SnowmanVM
@@ -449,9 +449,9 @@ func (vm *VM) NewBlock(parentID ids.ID, data [dataLen]byte, timestamp time.Time)
 }
 ```
 
-#### **BuildBlock**
+#### ** BuildBlock ** 
 
-This method is called by the consensus layer after the application layer tells it that a new block is ready to be built \(i.e., when `vm.NotifyConsensus()` is called\).
+此方法的共识层应用层告诉它之后，一个新的块准备要建\调用（即，当` vm.NotifyConsensus（）`被称为\）。
 
 ```cpp
 // BuildBlock returns a block that this VM wants to add to consensus
@@ -712,7 +712,10 @@ That’s it! That’s the entire implementation of a VM which defines a blockcha
 
 In this tutorial, we learned:
 
-* The `snowman.ChainVM` interface, which all VMs that define a linear chain must implement
-* The `snowman.Block` interface, which all blocks that are part of a linear chain must implement
-* The `core.SnowmanVM` and `core.Block` library types, which make defining VMs faster
+*该` snowman.ChainVM `接口，其中所有的VM定义的直链必须实现*的` snowman.Block `接口，其中所有的嵌段是由直链必须实现的部分*的` core.SnowmanVM `和`芯.Block `库类型，这使得虚拟机定义快
 
+
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTcwMzA0NDgwM119
+-->
